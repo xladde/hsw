@@ -42,12 +42,26 @@
 <li>Anwendungsprogrammierung</li>
 <li>Systemprogrammierung</li>
 <li>sonstige Module an der Hochschule Wismar im Studiengang Wirtschaftsinformatik (B.Sc.).</li>
-</ul><p>Die Musterlösungen stehen unter einer GPL3-Lizenz. Beispielaufgaben unterliegen dem Copyright der Hochschule Wismar - Fakultät für Wirtschaftswissenschaften.</p>
+</ul><p>Die Musterlösungen stehen unter einer <a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL3-Lizenz</a>. Beispielaufgaben unterliegen dem Copyright der Hochschule Wismar - Fakultät für Wirtschaftswissenschaften.</p>
 
 <h2>
 <a name="quellen-beziehen--updaten" class="anchor" href="#quellen-beziehen--updaten"><span class="octicon octicon-link"></span></a>Quellen beziehen &amp; Updaten</h2>
 
-<p><code>git clone https://github.com/xladde/hsw.git</code></p>
+<p>Um das Repo das erste mal zu beziehen muss folgender Befehl ausgeführt werden:
+<code>git clone https://github.com/xladde/hsw.git</code></p>
+
+<p>Ein Quellupdate kann über folgenden Befehl erfolgen:
+<code>git pull</code></p>
+
+<p>Der Upload neuer/geänderter Dateien erfolgt über eine Sequenz an Anweisungen. zunächst müssen alle neuen Dateien zur beobachtungsliste hinzugefügt werden: 
+<code>git add &lt;files&gt;</code>, bzw. <code>git add -A</code> um alle Dateien zu tracken.</p>
+
+<p>Danach erfolgt der Commit, also der Abschluss, dass eine neue version lokal verfügbar ist.
+<code>git commit -am "&lt;be polite and make a comment on your changes"</code></p>
+
+<p>Danach kann der Upload erfolgen:
+<code>git push</code>
+Hier ist nach Aufforderung Benutzername und Passwort einzugeben. Zu bachten ist, dass nur Projektbeteiligte berechtigt sind Uploads durchzuführen.</p>
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/xladde">xladde</a></p>
