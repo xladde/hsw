@@ -1,4 +1,5 @@
 # HSW-Repository Wirtschaftsinformatik
+: http://xladde.github.io/hsw/
 
 ## Inhalt und Umfang
 Dieses Repository dient der Dokumentation der Tutorien und Seminare im Studiengang "Wirtschaftsinformatik" (B.Sc.) an der Hochschule Wismar. Nach aktuellem Stand umfasst dies folgende Module:
