@@ -1,10 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 
-html,body {
-  border: none;
+body {
   padding:50px;
   font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color:#444;
+  color:#777;
   font-weight:300;
 }
 
@@ -34,7 +33,7 @@ h3, h4, h5, h6 {
 }
 
 a {
-  color:#336699;
+  color:#39c;
   font-weight:400;
   text-decoration:none;
 }
@@ -59,7 +58,7 @@ blockquote {
 }
 
 code, pre {
-  font-family: Consolas, Courier, Mono, Lucida Console, Bitstream Vera Sans Mono, Terminal, Monaco;
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
   color:#333;
   font-size:12px;
 }
