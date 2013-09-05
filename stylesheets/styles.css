@@ -1,13 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif|Droid+Sans+Mono);
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:13px 'Droid Sans', Helvetica, Arial, sans-serif;
   color:#666;
   font-weight:300;
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family:'Droid Serif', serif;
   color:#222;
   margin:0 0 20px;
 }
@@ -58,9 +59,9 @@ blockquote {
 }
 
 code, pre {
-  font-family:Courier, Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family:'Droid Sans Mono', sans-serif;
   color:#333;
-  font-size:12px;
+  font-size:13px;
 }
 
 pre {
