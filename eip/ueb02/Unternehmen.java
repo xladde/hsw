@@ -1,5 +1,5 @@
 /**
- * @brief   Uebungsaufgabe Nr. 2
+ * @brief   Uebungsaufgabe Nr. 2-1
  * @author  t.j.
  * @version 2013-08
  *
