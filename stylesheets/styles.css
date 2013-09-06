@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif|Droid+Sans+Mono);
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 
 body {
   padding:50px;
@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family:'Droid Serif', serif;
+  font-family:'Droid Sans', serif;
   color:#222;
   margin:0 0 20px;
 }
