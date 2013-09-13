@@ -82,9 +82,20 @@
 Nach dem letzten Schritt sind der Benutzername und das Passwort zur Autentifizierung einzugeben.
 </p>
 </section>
-<section>
+<!--<section>
   <p><a href="http://www.wi.hs-wismar.de" target="_blank"><img src="http://www.hs-wismar.de/uploads/pics/kopfbild_hochschule.jpg" width="100%" alt="Hochschule Wismar - Fakultaet fuer Wirtschaftswissenschaften"/></a></p>
+</section>//-->
+<section>
+  <h1>Struktur der Branches</h1>
+  <p>Git erlaubt es verschiedene Entwicklungszweige (Branches) für unterschiedliche Versionsstände zu erzeugen. Dieses Prinzip wird im vorligenden Repository angewandt. So existieren für die oben genannten Module Develop-Branches. </p>
+  <center><a href="https://github.com/xladde/hsw/network" target="_blank"><img src="img/git-network.png" width="90%"></a></center>
+  <p>Als Zip, oder Tarball lässt sich nur das Master-Branch herunterladen. Für die Arbeit an den Develop-Branches wird Git benötigt. Nach dem Clone des Repository kann wie folgt in die Verzweigung gewechselt werden.</p>
+  <p><code>$ git checkout &lt;branchname&gt;</code>, respektive <code>$ git checkout dev-&lt;modulname&gt;</code></p>
+  <p>Entsprechend erreicht man z.B. das Modul für 'Einführung in die Programmierung' über den Befehl <code>$ git checkout dev-eip</code>. </p>    
 </section>
+
+
+
 
 
 <!-- +++ FOOTER +++ FOOTER +++ FOOTER +++ FOOTER +++ FOOTER +++ FOOTER +++  -->
