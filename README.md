@@ -79,3 +79,73 @@ An dieser Stelle wird mit nachdruck darauf hingewiesen, dass noch Unterstützer 
         <td>hosted on [GitHub](https://github.com/xladde/hsw)</td>
     </tr>
 </table>
+
+---
+# Branching und Arbeit an den Develop-Sources
+## Hintergrund und Aufbau
+Für die Arbeit an den Develop-Branches zur Vorbereitung der Seminare und Tutorien wurden alle Module in separate Branches (Entwicklungszweige) ausgelagert. So sollen unabhängig der Entwicklungsstände anderer Module einfacher Updates in das System gespielt werden können.
+
+Die Branches sind entsprechend nach den abgekürzten Modulbezeichnungen aus dem Studium mit dem Prefix ```dev-``` benannt. Zum Beispiel lautet der Branchname für das Modul 'Einführung in die Programmierung' ```dev-eip```.
+
+## Branchübersicht
+<table>
+	<tr>
+    	<th>Modul</th>
+        <th>Bezeichnung</th>
+        <th>Quickref</th>
+    </tr>
+	<tr>
+    	<td>Einführung in die Programmierung</td>
+        <td>```dev-eip```</td>
+        <td>https://github.com/xladde/hsw/tree/dev-eip</td>
+    </tr>
+    <tr>
+    	<td>Einführung in die Wirtschaftsinformatik</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+    	<td>Systemprogrammierung</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+    	<td>Theoretische Informatik</td>
+        <td>``` dev-ti ```</td>
+        <td>https://github.com/xladde/hsw/tree/dev-ti</td>
+    </tr>
+    <tr>
+    	<td>Anwendungsprogrammierung</td>
+        <td>``` dev-awp ```</td>
+        <td>https://github.com/xladde/hsw/tree/dev-awp</td>
+    </tr>
+    <tr>
+    	<td>Künstliche Intelligenz</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+    	<td>Mobile Agenten</td>
+        <td>N/A</td>
+        <td>N/A</td>
+    </tr>
+    
+    <tr>
+    	<td>LaTeX</td>
+        <td>``` dev-tex ```</td>
+        <td>https://github.com/xladde/hsw/tree/dev-tex</td>
+	</tr>
+</table>
+
+## Branching
+
+Das wechseln in einen Entwicklungszweig erfolgt über den Befehl
+```sh
+$ git chechout <name of branch>
+```
+Der Hauptentwicklungszweig ist der Master: 
+```sh
+$ git checkout master
+```
+
+Updates werden wie gewohnt über ```$ git add```, ```$ git commit``` und ```$ git pull``` durchgeführt.
