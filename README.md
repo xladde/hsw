@@ -37,7 +37,7 @@ Weitere Veranstaltungen und Module dürfen gerne unter reger beteiligung ergänz
 
 ## Copyright & Copyleft
 
-Alle Beispiel- und Klausuraufgaben unterliegen dem Urheberrecht der Hochschule Wismar, Fakultät für Wirtschaftswissenschaften und insbesondere den Verantwortlichen Lehrbeauftragten der jeweiligen Module. Eine Weiterverbreitung und Reproduktion - auch auszugsweise - ist nicht gestattet.
+Alle Beispiel- und Klausuraufgaben unterliegen dem Urheberrecht der Hochschule Wismar, Fakultät für Wirtschaftswissenschaften und insbesondere den Verantwortlichen Lehrbeauftragten der jeweiligen Module. Eine Weiterverbreitung und Reproduktion - auch auszugsweise - ist nicht gestattet. &copy;HSW
 
 Alle Beispiele und Musterlösungen stehen unter der [GNU General Public License 3.0](http://www.gnu.de/documents/gpl.de.html) und dürfen frei verwendet werden. Das Wiki, sowie sämtliche extra für die Seminare und Tutorien angefertigten Paper und Dokumentationen stehen unter einer [Creative Commons 3.0 (cc) by-nc-sa-Lizenz](http://creativecommons.org/licenses/by-nc-sa/3.0/de/).
 
@@ -56,7 +56,15 @@ An dieser Stelle wird mit nachdruck darauf hingewiesen, dass noch Unterstützer 
 <table>
     <tr>
         <td>Projektadministrator:</td>
-        <td>Thomas Jonitz (t.j.) -- http://open.xladde.de</td>
+        <td>Thomas Jonitz (t.j.)</td>
+    </tr>
+    <tr>
+    	<td></td>
+        <td>https://github.com/xladde</td>
+    </tr>
+    <tr>
+    	<td></td>
+        <td>http://open.xladde.de</td>
     </tr>
     <tr>
         <td></td>
