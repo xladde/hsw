@@ -43,16 +43,24 @@ Alle Beispiele und Musterlösungen stehen unter der [GNU General Public License 
 
 Eine Mitarbeit an dieser Dokumentation ist erwünscht. Vorrausgesetzt wird ein faier Umgang mit den angefertigten Softwareprodukten; mindestens nach den Maßgaben der Free Software Foundation.
 
+## To Do
+An dieser Stelle wird mit nachdruck darauf hingewiesen, dass noch Unterstützer für dieses Projekt benötigt werden, die sich an den folgenden To-Do's beteiligen:
+* Erstellen der Wiki-Seiten
+* Abarbeitung der Aufgabenstellungen in den Modulen
+* Verfassen von Erläuterungen
+* Entwurf und Implementierung zu Hilfestellungen/Beispielen
+* Dokumentation der Quellen
+
 ## Kontakt
 
 <table>
     <tr>
         <td>Projektadministrator:</td>
-        <td>[Thomas Jonitz (t.j.)](http://open.xladde.de)</td>
+        <td>Thomas Jonitz (t.j.) -- http://open.xladde.de</td>
     </tr>
     <tr>
         <td></td>
-        <td>[t.jonitz@stud.hs-wismar.de](mailto:t.jonitz@stud.hs-wismar.de)</td>
+        <td>t.jonitz [at] stud.hs-wismar.de</td>
     </tr>
     <tr>
         <td>Repository</td>
