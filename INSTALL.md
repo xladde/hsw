@@ -69,7 +69,7 @@ Git unterstützt die verteilte Entwicklung. So können vom Hauptentwicklungszwei
     <tr>
     	<td>Einführung Programmierung</td>
     	<td>EiP</td>
-    	<td><code>dev-eip</code></td>
+    	<td><code>**dev-eip</code></td>
 	</tr>
     <tr>
     	<td>Anwendungsprogrammierung</td>
