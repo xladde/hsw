@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Informationen zur Installation und Verwendung</title>
+  <meta name="description" content="@@description">
+  <meta name="author" content="iaib">
+  <meta name="keywords" content="" />
+  <meta name="generator" content="haroopad" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<h1>Informationen zur Installation und Verwendung</h1><h2>Vorraussetzungen</h2><h3>Betriebssystem</h3><ul>
+<li>Alle Msuterlösungen und Beispiele wurden unter einem GNU/Linux-System (Debian Squeeze/Wheezy) erstellt. C/C++-Programme können auf Systembibliotheken zugreifen, die unter anderen betriebssystemen nicht existieren.</li>
+<li>Java-Programme und die Java-Quellen funktionieren Plattformunabhängig und sind unter Windows XP, Vista und 7 lauffähig. Ausgenommen davon sind eventuell fehlerhafte oder unvollständige Quellen </li>
+<li>Es wurden keine Tests unter iOS durchgeführt.</li>
+</ul><h3>Quellverwaltung</h3><ul>
+<li>Das Repository unterliegt einer Versionsverwaltung. Speziell wird die freie Software <a href="http://git-scm.com">Git</a> eingesetzt. Das Repository verfügt über mehrere Branches.</li>
+<li>Die zentrale Verwaltung findet über den Hostingdienst <a href="https://github.com">GitHub</a> statt.</li>
+<li>Das Repository ist im Netz unter <a href="https://github.com/xladde/hsw">https://github.com/xladde/hsw</a> oder über die Projektseite <a href="http://xladde.github.io/hsw">http://xladde.github.io/hsw</a> erreichbar</li>
+</ul><h3>Entwicklung</h3><ul>
+<li>Für die Übersetzung der Quellen werden Compiler, respektive Interpreter/Linker/etc. für die Sprachen C/C++, Java und Python benötigt. Das Modul “Betriebssysteme” arbeitet mit einer GNU/Linux-Distribution. Ein Shell-Interpreter ist dort bereits integriert.</li>
+<li>Weitere Compiler und notwendige Softwarepakete finden sich in den jeweiligen Veranstaltungen in <a href="http://studip.hs-wismar.de">Stud.IP</a>. So zum Beispiel für “Anton und Paula”.</li>
+<li>Für die Module werden folgende Entwicklungsumgebungen empfohlen:<ul>
+<li><a href="http://www.bluej.org">BlueJ</a> — Einführung in die Programmierung</li>
+<li><a href="http://netbeans.org">NetBeans</a> — Anwendungsprogrammierung</li>
+<li><a href="http://docs.python.org/2/library/idle.html">IDLE</a> — Systemprogrammierung</li>
+<li><a href="http://www.swi-prolog.org/IDE.html">SWI-Prolog</a> — Theoretische Informatik/Künstliche Intelligenz</li>
+<li>Einfacher Texteditor für sonstiges. Empfohlen wird <a href="http://www.sublimetext.com/">SublimeText</a></li>
+</ul>
+</li>
+</ul><h3>Dokumentation</h3><ul>
+<li>Die Dokumentation der vorhandenen Quellen wird mit dem Dokumentationstool <a href="http://www.doxygen.org/">Doxygen</a> (ab v.1.7.2) anhand der Kommentare und diverset Tags in den Quelltexten erstellt. Alternativ kann für Java-Programme auch das mit dem JDK mitgelieferten Tool <a href="http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html">JavaDoc</a> verwendet werden. </li>
+<li>Doxygen lädt eine Konfigurationsdatei, die die zu erstellende Dokumentation beschreibt. Für die Erstellung von Grafiken und Abhängigkeitsdiagramme baut das Tool auf das Paket <a href="http://www.graphviz.org/">Graphviz</a> auf.</li>
+<li>Das Tool “<strong>Dot</strong>“ ist Bestandteil der Graphviz-Bibliothek. Beim Download/bei der Installation sollte daher geprüft werden, ob das Paket bestandteil der Installation ist.</li>
+</ul><h2>Bezug der Quellen</h2><p>Die Mitarbeit am Repository ist ausdrücklich erwünscht. Um an den Quellen mitarbeiten zu können wird ein Account bei <a href="https://github.com">GitHub</a> benötigt.</p><h3>Allgemein</h3><p>Nach der Installation von Git erfolgt der Erstbezug der Quellen über den Befehl <code>git clone</code></p><pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ git clone https://github.com/xladde/hsw.git &amp;lt;target&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;">$ git clone https://github.com/xladde/hsw.git &lt;target&gt;
+</code></pre><p><code>&lt;target&gt;</code> beschreibt den Pfad, in dem die Quellen abgelegt werden.</p><p>Die jeweils aktuelle Quelltextversion wird über den <code>pull</code>-Befehl vom Server abgerufen. Vorher muss in das lokale Repository navigiert werden.</p><pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd &amp;lt;target&amp;gt;
+$ git pull
+&lt;/code&gt;&lt;/pre&gt;">$ cd &lt;target&gt;
+$ git pull
+</code></pre><p>Sind alle Quellen entsprechen bearbeitet worden und soll die neue Version eingespielt werden, so erfolgt dies in drei Schritten:</p><ol>
+<li>Hinzufügen der geänderten Dateien zur Watchlist:<pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ git add &amp;lt;list of files&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;">$ git add &lt;list of files&gt;
+</code></pre>
+</li>
+<li>Festlegen des aktuellen Versionsstandes:<pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ git commit -am &quot;&amp;lt;make a comment&amp;gt;&quot;
+&lt;/code&gt;&lt;/pre&gt;">$ git commit -am "&lt;make a comment&gt;"
+</code></pre>
+</li>
+<li>Upload der neuen Version<pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ git push
+&lt;/code&gt;&lt;/pre&gt;">$ git push
+</code></pre>
+Es erfolgt eine Aufforderung, den Benutzernamen und das Passwort einzugeben.</li>
+</ol><h3>Branching und verschiedene Entwicklungszweige</h3><p>Git unterstützt die verteilte Entwicklung. So können vom Hauptentwicklungszweig (<code>master</code>) verschiedene Zweige abgehen, parallel entwickelt werden und u.U. wieder zusammengefügt werden. In diesem Repository ist jedes Modul in einem eigenen Zweig ausgelagert worden. Die sogenannten Branches tragen den Namenspräfix <code>dev-</code> und enden mit der kurzbetzeichnung für die Module. Nachstehende Tabelle gibt einen Überblick:</p><center><table>
+    <tbody><tr>
+        <th>Modul</th>
+        <th>Kurz</th>
+        <th>Branch</th>
+    </tr>
+    <tr>
+        <td>Einführung Programmierung</td>
+        <td>EiP</td>
+        <td><code><em></em>dev-eip</code></td>
+    </tr>
+    <tr>
+        <td>Anwendungsprogrammierung</td>
+        <td>AWP</td>
+        <td><code>dev-awp</code></td>
+    </tr>
+    <tr>
+        <td>LaTeX</td>
+        <td>Tex</td>
+        <td><code>dev-tex</code></td>
+    </tr>
+</tbody></table></center><p>Um den Enwticklungszweig zu ändern wird der Befehl <code>checkout</code> verwendet:</p><pre><code class="sh" origin="&lt;pre&gt;&lt;code class=&quot;sh&quot;&gt;$ cd &amp;lt;target&amp;gt;
+$ git status
+# On branch master
+Working directory clean.
+$ git checkout &amp;lt;branch&amp;gt;
+Switched to branch &amp;lt;branch&amp;gt;
+$
+&lt;/code&gt;&lt;/pre&gt;">$ cd &lt;target&gt;
+$ git status
+# On branch master
+Working directory clean.
+$ git checkout &lt;branch&gt;
+Switched to branch &lt;branch&gt;
+$
+</code></pre><p><code>git status</code> sollte dabei immer genutzt werden, da es viele Informationen zum aktuellen Zustand des repositories liefert.</p>
+
+
+</body>
+</html>
