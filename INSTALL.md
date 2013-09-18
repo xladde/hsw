@@ -17,9 +17,10 @@
 * 	Für die Module werden folgende Entwicklungsumgebungen empfohlen:
 	* 	[BlueJ]( http://www.bluej.org ) -- Einführung in die Programmierung
 	* 	[NetBeans]( http://netbeans.org ) -- Anwendungsprogrammierung
-    * 	[IDLE]( http://docs.python.org/2/library/idle.html ) -- Systemprogrammierung
-    * 	[SWI-Prolog](http://www.swi-prolog.org/IDE.html) -- Theoretische Informatik/Künstliche Intelligenz
-    * 	Einfacher Texteditor für sonstiges. Empfohlen wird [SublimeText]( http://www.sublimetext.com/ )
+    	* 	[IDLE]( http://docs.python.org/2/library/idle.html ) -- Systemprogrammierung
+    	* 	[SWI-Prolog](http://www.swi-prolog.org/IDE.html) -- Theoretische Informatik/Künstliche Intelligenz
+    	* 	MSW-Logo (eventuell für die Einführungswoche)
+    	* 	Einfacher Texteditor für sonstiges. Empfohlen wird [SublimeText]( http://www.sublimetext.com/ )
 
 ### Dokumentation
 * 	Die Dokumentation der vorhandenen Quellen wird mit dem Dokumentationstool [Doxygen]( http://www.doxygen.org/ ) (ab v.1.7.2) anhand der Kommentare und diverset Tags in den Quelltexten erstellt. Alternativ kann für Java-Programme auch das mit dem JDK mitgelieferten Tool [JavaDoc]( http://www.oracle.com/technetwork/java/javase/documentation/index-jsp-135444.html ) verwendet werden. 
