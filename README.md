@@ -48,6 +48,7 @@ Eine Mitarbeit an dieser Dokumentation ist erwünscht. Vorrausgesetzt wird ein f
 ## To-Do
 An dieser Stelle wird mit Nachdruck darauf hingewiesen, dass noch Unterstützer für dieses Projekt benötigt werden, die sich an den folgenden To-Do's beteiligen:
 * 	[ ]	Erstellen der Wiki-Seiten
+* 	[ ] Erstellen einer Website mit weiterführenden Informationen
 * 	[ ]	Abarbeitung der Aufgabenstellungen in den Modulen
 *	[ ] Testen der Quelltexte
 * 	[ ]	Verfassen von Erläuterungen
