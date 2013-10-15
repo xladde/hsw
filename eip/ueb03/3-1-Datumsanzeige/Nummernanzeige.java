@@ -19,6 +19,7 @@ public class Nummernanzeige {
         if( limit < 0 ) { this.limit = 0 }
         else            { this.limit = limit; }
     }
+    
     public int getLimit() { return this.limit; }
 
     public void setWert( int wert ) {
@@ -27,4 +28,10 @@ public class Nummernanzeige {
         else                         { this.wert = wert; }
     }
     public int getWert() { return this.wert; }
+
+    public void tick() {
+        if( wert == limit ) { wert = 0; }
+        else { wert = wert+1; }
+    }
+
 } // end class Nummernanzeige

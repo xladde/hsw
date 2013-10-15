@@ -32,5 +32,5 @@ public class Mannschaft {
         if( spieler < 1 ) { this.spieler = 1; }
         else { this.spieler = spieler; }
     }
-    public int getPunkte() { return this.punkte; }
+    public int getSpieler() { return this.spieler; }
 } // end class Mannschaft

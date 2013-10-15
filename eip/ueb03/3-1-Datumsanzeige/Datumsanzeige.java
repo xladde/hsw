@@ -39,13 +39,13 @@ public class Datumsanzeige {
      * Methode erhoeht den Tageswert um 1.
      */
     public void tick() {
-        day.setWert( day.getWert()+1 );
+        day.setWert( day.tick() );
         if( day.getWert() == 0 ) {              // Tageswechsel vollzogen?
             day.setWert( 1 );                   // Wertekorrektur
-            mon.setWert( mon.getWert()+1 );     // Monatswert erhöhen
+            mon.setWert( mon.tick() );          // Monatswert erhöhen
             if( mon.getWert() == 0 ) {          // monatswechsel vollzogen?
                 mon.setWert( 1 );               // Wertekorrektur
-                yer.setWert( yer.getWert()+1 );
+                yer.setWert( yer.tick() );
                 if( yer.getWert() == 0 ) {      // Jahreswechsel vollzogen?
                     yer.setWert( 1 );
                 } else{}
