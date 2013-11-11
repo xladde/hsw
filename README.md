@@ -2,18 +2,23 @@
 
 ## Inhalt und Umfang
 
-Dieses Repository dient der Dokumentation der Tutorien und Seminare im Studiengang "Wirtschaftsinformatik" (B.Sc.) an der Hochschule Wismar. Nach aktuellem Stand umfasst dies folgende Module:
+Dieses Repository dient der Dokumentation der Tutorien und Seminare im Studiengang "Wirtschaftsinformatik" an der Hochschule Wismar. Nach aktuellem Stand umfasst dies folgende Module:
 
 * Einführung in die Programmierung
 * Anwendungsprogrammierung
 
 Weiterhin sind Dokumentationen für die folgenden Module geplant oder in Arbeit:
 
-* Einführung in die Wirtschaftsinformatik
-* Theoretische Informatik
-* Künstliche Intelligenz
-* Systemprogrammierung
-* Mobile Agenten (Wahlpflicht)
+* Bachelor:
+    * Einführung in die Wirtschaftsinformatik
+    * Theoretische Informatik
+    * Künstliche Intelligenz
+    * Systemprogrammierung
+    * Mobile Agenten (Wahlpflicht)
+    * Datenbanken/SQL
+* Master
+    * Wissensbasierte Systeme
+    * Datenbanken in Unternehmen
 
 Die Dokumentation dient lediglich der Ergänzung zur Teilnahme an den Seminaren, Vorlesungen und Tutorien. In keinem Fall ist es ein Ersatz der Lehrveranstaltungen.
 
@@ -55,33 +60,21 @@ An dieser Stelle wird mit Nachdruck darauf hingewiesen, dass noch Unterstützer 
 * 	[ ]	Entwurf und Implementierung zu Hilfestellungen/Beispielen
 * 	[ ]	Dokumentation der Quellen
 
-## Kontakt
-<table>
-    <tr>
-        <td>Projektadministrator:</td>
-        <td>Thomas Jonitz (t.j.)</td>
-    </tr>
-    <tr>
-    	<td></td>
-        <td>https://github.com/xladde</td>
-    </tr>
-    <tr>
-    	<td></td>
-        <td>http://open.xladde.de</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>t.jonitz [at] stud.hs-wismar.de</td>
-    </tr>
-    <tr>
-        <td>Repository</td>
-        <td>http://xladde.github.io/hsw</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>hosted on [GitHub](https://github.com/xladde/hsw)</td>
-    </tr>
-</table>
 
-## Sonstiges
-Hinweise zur Verwendung von Git finden sich auf der [entsprechenden Seite]( ./INSTALL.md ).
+## Verwendung
+Um die Quellen zuerst zu beziehen, muss ein Git-Client auf dem Arbeits-PC installiert sein.
+```sh
+$ git clone https://github.com/xladde/hsw <target>
+```
+
+Die aktuellen Quellen werden vor dem Arbeiten wie folgt bezogen:
+```sh
+$ git pull
+```
+
+Quellupdates werden mit folgenden Befehlen durchgeführt:
+```sh
+$ git add -A
+$ git commit -am <be polite and make a comment>
+$ git push
+```
