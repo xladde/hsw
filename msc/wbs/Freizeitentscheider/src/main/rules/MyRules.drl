@@ -1,0 +1,28 @@
+package com.sample
+ 
+import com.sample.Message;
+ 
+rule "init_status"
+    when
+        m : Message( status == STAT_ENUM.INIT, _str : message )
+    then
+        System.out.println( _str );
+        m.setStatus( Message.STAT_ENUM.STAT1 );
+        update( m );
+end
+
+rule "status_one"	
+    when
+        m : Message( status == STAT_ENUM.STAT1, _str : message )
+    then
+        System.out.println( _str );
+        m.setStatus( Message.STAT_ENUM.FINAL );
+        update( m );
+end
+
+rule "final_status"
+    when
+        Message( status == STAT_ENUM.FINAL, _str : message )
+    then
+        System.out.println( _str );
+end
