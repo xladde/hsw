@@ -39,10 +39,14 @@ public class Message {
 			case FINAL:
 				message = "Beende Freizeitentscheider";
 				break;
+			case STAT1: 
+				message = "Status Nummer 1";
+				break;
 			default:
 				message = "Etwas unerwartetes ist gekommen.";
 				break;
 		}
+		System.out.println("New Status: "+status.name());
 	}
 
 

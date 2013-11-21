@@ -1,10 +1,14 @@
 package com.sample
- 
+
+//import com.sample.Main.Message; 
+//import com.sample.Main.Message.STAT_ENUM; 
 import com.sample.Message;
+import com.sample.Message.STAT_ENUM;
  
 rule "init_status"
+no-loop true
     when
-        m : Message( status == STAT_ENUM.INIT, _str : message )
+        m : Message( status == Message.STAT_ENUM.INIT, _str : message )
     then
         System.out.println( _str );
         m.setStatus( Message.STAT_ENUM.STAT1 );
@@ -12,8 +16,9 @@ rule "init_status"
 end
 
 rule "status_one"	
+no-loop true
     when
-        m : Message( status == STAT_ENUM.STAT1, _str : message )
+        m: Message( status == Message.STAT_ENUM.STAT1, _str : message )
     then
         System.out.println( _str );
         m.setStatus( Message.STAT_ENUM.FINAL );
@@ -21,8 +26,9 @@ rule "status_one"
 end
 
 rule "final_status"
+no-loop true
     when
-        Message( status == STAT_ENUM.FINAL, _str : message )
+        m: Message( status == Message.STAT_ENUM.FINAL, _str : message )
     then
         System.out.println( _str );
 end

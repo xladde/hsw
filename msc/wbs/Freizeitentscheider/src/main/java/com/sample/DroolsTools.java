@@ -14,13 +14,15 @@ import org.drools.runtime.StatefulKnowledgeSession;
 
 import com.sample.Message;
 import com.sample.Message.STAT_ENUM;
+//import com.sample.Main.Message;
+//import com.sample.Main.Message.STAT_ENUM;
 
 public class DroolsTools {
 
 	private final static String DEFAULT_KB  = "MyRules.drl";
 	private final static String DEFAULT_LOG = "test";
 	
-	public static StatefulKnowledgeSession getKnowledgeSession(String rulepath, Message m) {
+	public static StatefulKnowledgeSession getKnowledgeSession(String rulepath, Message message) {
 		
 		KnowledgeBase kbase;
 		StatefulKnowledgeSession ksession;
@@ -29,9 +31,9 @@ public class DroolsTools {
 		if(rulepath == null) { 
 			rulepath = DEFAULT_KB; 
 		}
-		if(m == null) { 
-			m = new Message(); 
-			m.setStatus(STAT_ENUM.INIT);
+		if(message == null) { 
+			message = new Message(); 
+			message.setStatus(Message.STAT_ENUM.INIT);
 		}
 		
 		try {
@@ -41,7 +43,7 @@ public class DroolsTools {
 				ksession = kbase.newStatefulKnowledgeSession();
 				//logger = KnowledgeRuntimeLoggerFactory.newFileLogger(ksession, DEFAULT_LOG);
 				// start engine
-				ksession.insert(m);
+				ksession.insert(message);
 				//ksession.fireAllRules();
 				//logger.close();
 				return ksession;
