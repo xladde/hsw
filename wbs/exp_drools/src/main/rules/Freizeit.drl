@@ -1,0 +1,265 @@
+package hsw.wbs.frze.model
+ 
+import hsw.wbs.core.Message;
+import hsw.wbs.frze.model.FreizeitMessage;
+import hsw.wbs.frze.model.Aktionsraum;
+import hsw.wbs.frze.model.Zustandsraum;
+
+// WETTER-REGELN ////////////////////////////////////////
+rule "strike_wetter_bewoelkt"
+    when
+        m : FreizeitMessage( wetter == Zustandsraum.Witterung.BEWOELKT )
+    then
+        System.out.print("valid:\tbewölkt\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.STRAND
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+        
+end
+
+rule "strike_wetter_regen"
+    when
+        m : FreizeitMessage( wetter == Zustandsraum.Witterung.REGEN )
+    then
+        
+        System.out.print("valid:\tregen\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KUBB, Aktionsraum.FreizeitAktion.MOELKKY,
+            Aktionsraum.FreizeitAktion.FUSSBALL, Aktionsraum.FreizeitAktion.STRAND,
+            Aktionsraum.FreizeitAktion.GRILLEN, Aktionsraum.FreizeitAktion.DRACHENSTEIGEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_wetter_wind"
+    when
+        m : FreizeitMessage( windig )
+    then
+        System.out.print("valid:\twindig\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KUBB, Aktionsraum.FreizeitAktion.MOELKKY,
+            Aktionsraum.FreizeitAktion.STRAND, Aktionsraum.FreizeitAktion.GRILLEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+// FINANZEN-REGELN ////////////////////////////////////////
+rule "strike_finanzen_keine"
+    when
+        m : FreizeitMessage( finanzen == Zustandsraum.Finanzen.KEINE )
+    then
+        System.out.print("valid:\tkein geld\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.THEATER,
+            Aktionsraum.FreizeitAktion.KONZERT, Aktionsraum.FreizeitAktion.BAR,
+            Aktionsraum.FreizeitAktion.DISCO
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_finanzen_wenig"
+    when
+        m : FreizeitMessage( finanzen == Zustandsraum.Finanzen.WENIG )
+    then
+        System.out.print("valid:\twenig geld\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.THEATER,
+            Aktionsraum.FreizeitAktion.KONZERT, Aktionsraum.FreizeitAktion.DISCO,
+        };
+        m.strike(a);
+end
+
+rule "strike_finanzen_normal"
+    when
+        m : FreizeitMessage( finanzen == Zustandsraum.Finanzen.NORMAL )
+    then
+        System.out.print("valid:\tnormal geld\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KONZERT, Aktionsraum.FreizeitAktion.DISCO
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+// LAUNE-REGELN ////////////////////////////////////////
+rule "strike_laune_indooronly"
+    when
+        m : FreizeitMessage( 
+                launen.contains(Zustandsraum.Laune.INDOOR), 
+                !launen.contains(Zustandsraum.Laune.OUTDOOR) 
+            )
+    then
+        System.out.print("valid:\tindoor\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KUBB, Aktionsraum.FreizeitAktion.MOELKKY,
+            Aktionsraum.FreizeitAktion.FUSSBALL, Aktionsraum.FreizeitAktion.STRAND,
+            Aktionsraum.FreizeitAktion.GRILLEN, Aktionsraum.FreizeitAktion.DRACHENSTEIGEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_laune_outdooronly"
+    when
+        m : FreizeitMessage( 
+                launen.contains(Zustandsraum.Laune.OUTDOOR), 
+                !launen.contains(Zustandsraum.Laune.INDOOR) 
+            )
+    then
+        System.out.print("valid:\toutdoor\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KOCHEN, Aktionsraum.FreizeitAktion.LERNEN, 
+            Aktionsraum.FreizeitAktion.MUSIKCD, Aktionsraum.FreizeitAktion.DVD, 
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.THEATER, 
+            Aktionsraum.FreizeitAktion.SCHACH,  Aktionsraum.FreizeitAktion.BAR, 
+            Aktionsraum.FreizeitAktion.DISCO, Aktionsraum.FreizeitAktion.ESSENGEHEN, 
+            Aktionsraum.FreizeitAktion.PUTZEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_laune_solo"
+    when
+        m : FreizeitMessage( finanzen == Zustandsraum.Finanzen.NORMAL )
+    then
+        System.out.print("valid:\tsolo\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.SCHACH, Aktionsraum.FreizeitAktion.KUBB,
+            Aktionsraum.FreizeitAktion.FUSSBALL, Aktionsraum.FreizeitAktion.DRACHENSTEIGEN 
+        };
+        m.strike(a);
+end
+
+// ZEITPUNKT-REGELN ////////////////////////////////////////
+rule "strike_zeitpunkt_frueh"
+    when
+        m : FreizeitMessage( tageszeit == Zustandsraum.Tageszeit.FRUEH )
+    then
+        System.out.print("valid:\tfrüh\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.DISCO, Aktionsraum.FreizeitAktion.BAR,
+            Aktionsraum.FreizeitAktion.ESSENGEHEN, Aktionsraum.FreizeitAktion.KINO,
+            Aktionsraum.FreizeitAktion.KONZERT, Aktionsraum.FreizeitAktion.DVD,
+            Aktionsraum.FreizeitAktion.MUSIKCD 
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_zeitpunkt_mittag"
+    when
+        m : FreizeitMessage( tageszeit == Zustandsraum.Tageszeit.MITTAG )
+    then
+        System.out.print("valid:\tmittag\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.DISCO, Aktionsraum.FreizeitAktion.BAR,
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.KONZERT
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_zeitpunkt_abend"
+    when
+        m : FreizeitMessage( tageszeit == Zustandsraum.Tageszeit.ABEND )
+    then
+        System.out.print("valid:\tabend\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.LERNEN, Aktionsraum.FreizeitAktion.PUTZEN,
+            Aktionsraum.FreizeitAktion.DRACHENSTEIGEN, Aktionsraum.FreizeitAktion.DISCO
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_zeitpunkt_nacht"
+    when
+        m : FreizeitMessage( tageszeit == Zustandsraum.Tageszeit.NACHT )
+    then
+        System.out.print("valid:\tnacht\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.ESSENGEHEN, Aktionsraum.FreizeitAktion.KOCHEN,
+            Aktionsraum.FreizeitAktion.LERNEN, Aktionsraum.FreizeitAktion.PUTZEN,
+            Aktionsraum.FreizeitAktion.DRACHENSTEIGEN,
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+// FREIZEIT-REGELN ////////////////////////////////////////
+rule "strike_freizeit_wenig"
+    when
+        m : FreizeitMessage( freizeit == Zustandsraum.Freizeit.WENIG )
+    then
+        System.out.print("valid:\twenig zeit\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.ESSENGEHEN, Aktionsraum.FreizeitAktion.LERNEN,
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.THEATER, 
+            Aktionsraum.FreizeitAktion.DISCO, Aktionsraum.FreizeitAktion.GRILLEN,
+            Aktionsraum.FreizeitAktion.STRAND, Aktionsraum.FreizeitAktion.DVD,
+            Aktionsraum.FreizeitAktion.DRACHENSTEIGEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+rule "strike_freizeit_normal"
+    when
+        m : FreizeitMessage( freizeit == Zustandsraum.Freizeit.NORMAL )
+    then
+        System.out.print("valid:\tnormal zeit\t");
+        Aktionsraum.FreizeitAktion[] a = {
+            Aktionsraum.FreizeitAktion.KINO, Aktionsraum.FreizeitAktion.THEATER, 
+            Aktionsraum.FreizeitAktion.GRILLEN
+        };
+        m.strike(a);
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+
+/** 
+rule "strike_"
+    when
+        m : FreizeitMessage()
+    then
+        System.out.print("valid:\t");
+        Aktionsraum.Freizeitaktion[] a = {
+        }
+        m.strike(a);
+        update( m );
+        for(Aktionsraum.FreizeitAktion b: m.getAktionsArray()) {
+            System.out.print(b+", ");
+        } System.out.println();
+end
+**/
