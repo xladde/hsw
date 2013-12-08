@@ -12,7 +12,7 @@
  * Usage:
  *      Run this program either with two arguments for 'm' and 'n':
  *              $ ./ackermann.o <m> <n>
- *      or without any arguments. 'm' will be 4 and 'n' will
+ *      or without any arguments. 'm' will be 5 and 'n' will
  *      be 14 by default.
  *
  * Note:
