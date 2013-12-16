@@ -32,7 +32,6 @@ public class Tree {
   public Tree getRBranch() { return this.rBranch; }
  
   // -------------------------------------------------------------------
-<<<<<<< HEAD
  
   public void sortInsert( String str ) {
       if(str.compareTo(node) < 0){
@@ -72,7 +71,7 @@ public class Tree {
         if(l > r) return 1+l;
         else return 1+r;
       }
-=======
+  }
   
   // no check for valid subtrees!
   public void sortInsert( String elem ) {
@@ -99,6 +98,5 @@ public class Tree {
   // no check for valid subtrees!
   public int depth( ) {
     
->>>>>>> 3ee6e0329a4b9d5b77eb6958dea4b78e00b7a9dc
   }
 
