@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=a1
+comment0.target=int[]\ bubbleSort(int[])
+comment0.text=\n\ BubbleSort\n
+comment1.params=a1
+comment1.target=int[]\ selectSort(int[])
+comment1.text=\n\ SelectSort\n
+comment2.params=a1\ start\ stop\ neu
+comment2.target=int[]\ insert(int[],\ int,\ int,\ int)
+comment2.text=\n\ InsertSort,\ f\u00FCr\ sortiertes\ Einf\u00FCgen\ in\ ein\ Array\n
+comment3.params=a
+comment3.target=void\ printArray(int[])
+numComments=4
