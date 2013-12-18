@@ -1,3 +1,6 @@
+# Fibonacci-Zahl rekursiv berechnen
+
+```
 Funktion Fibonacci(-> N: kardinal): kardinal 
 Variable Ergebnis:kardinal 
 Beginn 
@@ -8,4 +11,5 @@ Beginn
    Ergebnis:= Fabonacci(N - 1) + Fabonacci(N - 2) 
   setzeFunktionswert(Ergebnis) 
 Ende 
-) 
+)
+```
