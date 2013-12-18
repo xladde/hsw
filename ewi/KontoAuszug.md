@@ -1,6 +1,6 @@
-//
-// a)
-//
+# Aufgabe Kontoauszug
+## a)
+```
 Typ Kontoauszug = Verbund( 
     knr: ganzzahl 
     blz: ganzzahl 
@@ -10,21 +10,19 @@ Typ Kontoauszug = Verbund(
     habenb:Reihe[1..n] von fließzahl 
     saln: fließzahl  
 ) 
+```
 
-
-//
-// b)
-//
+## b)
+```
 Variable k : Kontoauszug 
 Aktion neuerSaldo(<-> k:Kontoauszug) 
 Beginn 
     k.saln := k.sala + [k.habenb] - [k.sollb] 
 Ende 
+```
 
-
-//
-// c)
-//
+## c)
+```
 Variable k : Kontoauszug 
 Funktion SummeHaben(<-> K:Kontoauszug) : fließzahl 
 Variable I : ganzzahl 
@@ -58,3 +56,4 @@ Aktion neuerSaldo(<-> K:Kontoauszug)
 Beginn 
     K.saln := K.sala + SummeHaben(K) - SummeSoll(K) 
 Ende 
+```
