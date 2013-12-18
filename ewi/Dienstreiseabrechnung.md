@@ -5,15 +5,14 @@ Kalendertag angesetzt:
 *   24 Euro bei einer Abwesenheit von 24 Stunden,
 *   12 Euro bei einer Abwesenheit von weniger als 24 Stunden, aber mindestens 14 Stunden,
 *   6 Euro bei einer Abwesenheit von weniger als 14 Stunden, aber mindestens 8 Stunden
-
 (Nach Paragraph 4 Absatz 5 Satz 1 Nummer 5 Satz 2 des Einkommensteuergesetzes)
-
 Entwickeln Sie eine problemorientierte Anton-Funktion, die aus einer Anzahl von Abwesenheitsstunden aufgrund
 einer Dienstreise im Jahr 2012 die Verpflegungsmehraufwendungen in Euro ermittelt. Nutzen Sie dazu auch geeignete
 Funktionen aus Arbeitsmaterial Nr. 6 (Problemorientierte Notationsbeispiele).
 
 
-## Lösung
+## Lösungsvariante 1 (rekursiv)
+```
 Funktion AufwandBerechnen(-> Stunden: kardinal): kardinal
 Variable Ergebnis: kardinal
   Tage:     kardinal
@@ -37,10 +36,11 @@ Beginn
                             + AufwandBerechnen(Modulo(Tage, 24))
   setzeFunktionswert(Ergebnis)
 Ende
+```
 
-## Alternative Lösung
+## Lösungsvariante 2
 by Marcus Die.
-
+```
 Funktion AufwandBerechnen(-> Stunden: kardinal):fließzahl
 Variable Betrag: fließzahl
 Beginn
@@ -54,8 +54,4 @@ Beginn
         dann Betrag:= Betrag + 6.0
   setzeFunktionswert(Betrag)
 Ende
-
-
-
-
-
+```
