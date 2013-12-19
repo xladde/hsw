@@ -1,80 +1,50 @@
-# HSW-Repository Wirtschaftsinformatik
+# Git-Repository für Wirtschaftsinformatik
+Das "HSW-Repository" sammelt Quelltexte und Musterlösungen für programmierrelevante Module im Studiengang Wirtschaftsinformatik (Ba/Ma) an der Hochschule Wismar.
 
 ## Inhalt und Umfang
+Derzeit sind Quelltexte für folgende Module vorhanden:
 
-Dieses Repository dient der Dokumentation der Tutorien und Seminare im Studiengang "Wirtschaftsinformatik" an der Hochschule Wismar. Nach aktuellem Stand umfasst dies folgende Module:
+* [Einführung in die Wirtschaftsinformatik](https://github.com/xladde/hsw/tree/master/ewi)
+* [Einführung in die Programmierung](https://github.com/xladde/hsw/tree/master/eip)
+* [Anwendungsprogrammierung](https://github.com/xladde/hsw/tree/master/awp)
+* [Theoretische Informatik](https://github.com/xladde/hsw/tree/master/ti)
+* [Datenbanken/Datenbanken in Unternehmen](https://github.com/xladde/hsw/tree/master/db)
+* [Wissensbasierte Systeme](https://github.com/xladde/hsw/tree/master/wbs)
 
-* Einführung in die Programmierung
-* Anwendungsprogrammierung
+Weiterhin exisierte ein Verzeichnis [tex](https://github.com/xladde/hsw/tree/master/tex), dass LaTeX-Klassen für das anfertigen von Abschlussarbeiten bereitstellt.
 
-Weiterhin sind Dokumentationen für die folgenden Module geplant oder in Arbeit:
+## Hinweise zur Verwendung
+Für die Vollständig- und/oder Richtigkeit der hier zur Verfügung gestellten Daten wird keine Garantie übernommen. Die Lösungen und Beispiele dienen als Ergänzung und nicht als Ersatz der Lehrveranstaltungen. Es ist erwünscht an der Vervollständigung, Strukturierung und Verbesserung dieses Repositories mitzuarbeiten.
 
-* Bachelor:
-    * Einführung in die Wirtschaftsinformatik
-    * Theoretische Informatik
-    * Künstliche Intelligenz
-    * Systemprogrammierung
-    * Mobile Agenten (Wahlpflicht)
-    * Datenbanken/SQL
-* Master
-    * Wissensbasierte Systeme
-    * Datenbanken in Unternehmen
+### Daten-Download
+Um das Repo lesen zu können, kann die jeweils aktuelle Version als [*.zip-file](https://github.com/xladde/hsw/zipball/master) oder als [*.tar-ball](https://github.com/xladde/hsw/tarball/master) heruntergeladen werden. Um die Versionsverwaltung zu verwenden, muss [Git](http://git-scm.com/) auf dem Entwicklungsrechner installiert sein. Für eine grafische Verwendung stehen einige Frontends für alle gängigen Betriebssysteme zur Verfügung.
 
-Die Dokumentation dient lediglich der Ergänzung zur Teilnahme an den Seminaren, Vorlesungen und Tutorien. In keinem Fall ist es ein Ersatz der Lehrveranstaltungen.
+Um auf der lokalen Festplatte eine Kopie (clone) des Repos zu erhalten muss folgender Befehl ausgeführt werden:
+```
+$ git clone https://github.com/xladde/hsw <path>/hsw
+```
+'```<path>```' ist dabei das Verzeichnis, in dem die Kopie erzeugt werden soll.
 
-Weitere Veranstaltungen und Module dürfen gerne unter reger beteiligung ergänzt werden.
-
-## Copyright & Copyleft
-
-Alle Beispiel- und Klausuraufgaben unterliegen dem Urheberrecht der Hochschule Wismar, Fakultät für Wirtschaftswissenschaften und insbesondere den Verantwortlichen Lehrbeauftragten der jeweiligen Module. Eine Weiterverbreitung und Reproduktion - auch auszugsweise - ist nicht gestattet. &copy;HSW
-
-Alle Beispiele und Musterlösungen stehen unter der [GNU General Public License 3.0](http://www.gnu.de/documents/gpl.de.html) (oder [hier]( ./LICENSE )) und dürfen frei verwendet werden. Das Wiki, sowie sämtliche extra für die Seminare und Tutorien angefertigten Paper und Dokumentationen stehen unter einer [Creative Commons 3.0 (cc) by-nc-sa-Lizenz](http://creativecommons.org/licenses/by-nc-sa/3.0/de/).
-
-Eine Mitarbeit an dieser Dokumentation ist erwünscht. Vorrausgesetzt wird ein faier Umgang mit den angefertigten Softwareprodukten; mindestens nach den Maßgaben der Free Software Foundation.
-
-## Changelog & Verlauf
-
-### Einführung Programmierung
-
-* Wintersemester 2009/2010
-* Wintersemester 2010/2011
-* Wintersemester 2011/2012
-* Wintersemester 2012/2013
-* Wintersemester 2013/2014 (aktuell)
-
-### Anwendungsprogrammierung
-
-* Sommersemester 2011
-* Sommersemester 2012
-* Sommersemester 2013 (aktuell)
-
-
-
-## To-Do
-An dieser Stelle wird mit Nachdruck darauf hingewiesen, dass noch Unterstützer für dieses Projekt benötigt werden, die sich an den folgenden To-Do's beteiligen:
-* 	[ ]	Erstellen der Wiki-Seiten
-* 	[ ] Erstellen einer Website mit weiterführenden Informationen
-* 	[ ]	Abarbeitung der Aufgabenstellungen in den Modulen
-*	[ ] Testen der Quelltexte
-* 	[ ]	Verfassen von Erläuterungen
-* 	[ ]	Entwurf und Implementierung zu Hilfestellungen/Beispielen
-* 	[ ]	Dokumentation der Quellen
-
-
-## Verwendung
-Um die Quellen zuerst zu beziehen, muss ein Git-Client auf dem Arbeits-PC installiert sein.
-```sh
-$ git clone https://github.com/xladde/hsw <target>
+Ist bereits ein Clone vorhanden, so wird die jeweils aktuelle Version wie folgt bezogen:
+```
+$ git fetch  // sync
+$ git status // check for diffrences
+$ git pull   // only if status is okay!
 ```
 
-Die aktuellen Quellen werden vor dem Arbeiten wie folgt bezogen:
-```sh
-$ git pull
-```
 
-Quellupdates werden mit folgenden Befehlen durchgeführt:
-```sh
-$ git add -A
-$ git commit -am <be polite and make a comment>
+### Daten-Upload
+Für den Upload ist derzeit noch ein [Github](https://github.com)-Account notwendig.
+```
+$ git add <files to upload>
+$ git commit -am "<be polite and leave a comment on your commit>"
+$ git fetch  // sync
+$ git status // check for diffrences
 $ git push
+Username: <your github username>
+Passwort: <yout github password>
 ```
+Github bietet zudem die Möglichkeit direkt von dort zu forken und eine parallele Version des Repos zu entwickeln.
+
+## Copyright
+Alle hier abgelegten, nicht anders gekennzeichneten, Daten und Quellen stehen unter einer GNU-GPL-, respektive CreativeCommons-3-Lizenz (by-nc-sa) und dürfen nach den Maßgaben frei verwendet und weitergeben werden.
