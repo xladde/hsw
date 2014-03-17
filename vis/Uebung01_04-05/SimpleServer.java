@@ -1,71 +1,89 @@
 /**
- * Verteilte Systeme, Aufgabe 1.5 Sicherheitsrichtlinie
- * Das Serverprogramm soll mit Portnummmern kleiner 5000 nicht gestartet werden koennen.
- * Ergaenzen Sie ihr Programm mit einer entsprechenden Sicherheitsrichtlinie, 
- * die als SecurityManager-Objekt geladen wird. 
- * @author Michael Mueller
- * @version 19.03.2012
+ * @author t.j.
+ * @version 2014-03
  */
+
+// import classes
 import java.io.*;
 import java.net.*;
 
+/**
+ * Class SimpleServer acts as server in this example.
+ * It opens a Socket and waits for an incomming connection.
+ * If a client connects the server and the client will exchange messages.
+ */
 public class SimpleServer {
 
-	public static void main(String[] arg) {
+    // define WI identification as portnumber
+    public static final int PORT_NUMBER = 8045;
 
-		try {
-			int listenPort = Integer.parseInt(arg[0]);
-			System.setSecurityManager(new PortSecurityManager(listenPort));
-			// Objekt vom Typ ServerSocket wird erzeugt.
-			ServerSocket serverSocket = new ServerSocket(listenPort);
-			// Ein Objekt vom Typ Socket wird erzeugt sobald eine Verbindung
-			// zu einem Client hergestellt wurde(serverSocket.accept()).
-			// Die Verbindungseigenschaften werden an das Objekt uebergeben
-			Socket socket = serverSocket.accept();
+    // define global Message for clients
+    public static final String MESSAGE = "Hello dear client.";
 
-			BufferedReader input = new BufferedReader(new InputStreamReader(
-					socket.getInputStream()));
-			PrintStream output = new PrintStream(socket.getOutputStream());
-			String inputString = "";
-			System.out.println("IP-Adresse des Clients lautet: "
-					+ socket.getInetAddress());
-			do {
-				inputString = input.readLine();
-				if (inputString == null) {
-					System.out
-							.println("Kein Empfang mehr, warte auf Verbindung");
-					socket.close();
-					socket = serverSocket.accept();
-					input = new BufferedReader(new InputStreamReader(
-							socket.getInputStream()));
-					output = new PrintStream(socket.getOutputStream());
-					System.out.println("IP-Adresse des neuen Clients lautet: "
-							+ socket.getInetAddress());
-					inputString = "";
-					continue;
+    /**
+     * @param args String array with commandline arguments.
+     * Main method which is called on program init.
+     */
+    public static void main(String[] args) {
 
-				}
-				System.out.println("Empfangen von Client: " + inputString);
-				output.println("Hi");
-				output.flush();
+        ServerSocket        serverSocket; // server socket
+        Socket              clientSocket; // socket client connects
+        BufferedReader      in;           // receive from client
+        PrintStream         out;          // send to client
 
-			} while (!(inputString.equals("server stop") || inputString
-					.equals("all stop")));
+        // Run in a try-catch-block.
+        // Sockets, reading and writing objects can throw various exceptions.
+        try {
 
-			serverSocket.close();
-			input.close();
-			output.close();
-			System.out.println("Verbindung geschlossen");
-		} catch (IOException exc) {
-			exc.getMessage();
-		} catch (NumberFormatException nfe) {
-			System.out.println("\"" + arg[0]
-					+ "\" ist kein gueltiger Integer-Wert.");
-		} catch (SecurityException secEx) {
-			System.out.println(secEx.getMessage());
-		} catch (ArrayIndexOutOfBoundsException ex) {
-			System.out.println("Beim Aufruf des Programs muss eine Portnummer uebergeben werden.");
-		}
+            // Set security manager to validate the port number of new ServerSockets
+            System.setSecurityManager(new PortSecurityManager(PORT_NUMBER));
 
-	}
+            // opening a socket on the local sistem (server-side)
+            // This socket listens on a specific port for incomming connections.
+            serverSocket = new ServerSocket(PORT_NUMBER);
+
+            // wait for a client to connect and open another socket
+            clientSocket = serverSocket.accept();
+
+            // Opening an input stream to receive messages from the client.
+            // This is done by getting the clients input stream.
+            in = new BufferedReader( new InputStreamReader(clientSocket.getInputStream()) );
+
+            // Opening an output stream to send messages to the client.
+            // This is done by getting the output stream of the client.
+            out = new PrintStream(clientSocket.getOutputStream());
+
+            // "Receive" message from client.
+            System.out.println( "Client:\t" + in.readLine() );
+
+            // Prepare and "send" message to the client
+            out.println( MESSAGE );
+            out.flush();
+
+
+            // reading clients messages until client sends message "stop".
+            String str;
+            do {
+                str = in.readLine();
+                System.out.println( "Client:\t" + str );
+            } while( str.compareTo("stop") != 0 );
+
+            /* ANNOYING OVERHEAD */
+            // close connections and streams
+            in.close();
+            out.close();
+            clientSocket.close();
+
+
+        } catch(IOException e) {
+            // ...
+        } catch(SecurityException e) {
+            // ...
+        } catch(IllegalArgumentException e) {
+            // ...
+        } catch(Exception  e) {
+            // ...
+        }
+                   
+    }    
 }

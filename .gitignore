@@ -1,2 +1,8 @@
-# ignore java class files
+# ignore global file paterns
+
+# ignore java files
 *.class
+
+# ignore tex files
+
+# ignore c/c++ files
