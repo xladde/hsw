@@ -67,7 +67,7 @@ public class SimpleClient {
                 BufferedReader console = new BufferedReader(
                     new InputStreamReader(System.in));
                 // Reading a message
-                str = console.readLine("Message to server: ");
+                str = console.readLine();
                 // "Sending" message
                 out.println(str);
                 out.flush();
