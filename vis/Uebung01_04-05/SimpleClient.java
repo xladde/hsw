@@ -60,8 +60,15 @@ public class SimpleClient {
             // stopping if message is "stop".
             String str;
             do {
-                Console console = System.console();
+                // Opening a console-object which listens on user input
+                //Console console = System.console();
+
+                // Open a BufferedReader from systems InputStreamReader
+                BufferedReader console = new BufferedReader(
+                    new InputStreamReader(System.in));
+                // Reading a message
                 str = console.readLine("Message to server: ");
+                // "Sending" message
                 out.println(str);
                 out.flush();
             } while( str.compareTo("stop") != 0 );
