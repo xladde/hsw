@@ -1,14 +1,6 @@
-/**
- * Verteilte Systeme, Aufgabe 1.5 Sicherheitsrichtlinie: Das Serverprogramm soll
- * mit Portnummmern kleiner 5000 nicht gestartet werden koennen. Ergaenzen Sie ihr
- * Programm mit einer entsprechenden Sicherheitsrichtlinie, die als
- * SecurityManager-Objekt geladen wird.
- * Diese Klasse erbt vom SecurityManager. 
- * Die Methoden checkListen() und checkAccept() werden ueberschrieben
- * 
- * 
- * @author Michael Mueller
- * @version 19.03.2012
+/** 
+ * @authort.j.
+ * @version 2014-03
  */
 public class PortSecurityManager extends SecurityManager {
     
@@ -16,7 +8,9 @@ public class PortSecurityManager extends SecurityManager {
     private static final int LOW_PORT = 5000;
 
     /**
-     *
+     * Constructor.
+     * @param listenPort Integer value representing the port of the
+     * incomming connection. 
      */
     public PortSecurityManager(int listenPort) {
         super();
@@ -24,7 +18,9 @@ public class PortSecurityManager extends SecurityManager {
     }
     
     /**
-     *
+     * Validate connection.
+     * @param listenPort Integer value representing the port of the
+     * incomming connection.
      */
     @Override
     public void checkListen(int listenPort) {
@@ -34,7 +30,13 @@ public class PortSecurityManager extends SecurityManager {
         }
     }
 
-    
+    /**
+     * if accepted ...
+     * This method is needed for a stable handshake
+     * @param host URL/IP comming in...
+     * @param port Integer value representing the port of the
+     * incomming connection.
+     */
     @Override
     public void checkAccept(String host, int port) {
         System.out.println("Willkommen " + host + ":" + port + ".\n");

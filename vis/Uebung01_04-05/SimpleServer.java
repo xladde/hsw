@@ -17,6 +17,9 @@ public class SimpleServer {
     // define WI identification as portnumber
     public static final int PORT_NUMBER = 8045;
 
+    // lowest possible port number to compare with.
+    private static final int LOW_PORT = 5000;    
+
     // define global Message for clients
     public static final String MESSAGE = "Hello dear client.";
 
@@ -35,8 +38,8 @@ public class SimpleServer {
         // Sockets, reading and writing objects can throw various exceptions.
         try {
 
-            // Set security manager to validate the port number of new ServerSockets
-            System.setSecurityManager(new PortSecurityManager(PORT_NUMBER));
+            // Set security manager to validate the port number for incomming connections
+            System.setSecurityManager(new PortSecurityManager(LOW_PORT));
 
             // opening a socket on the local sistem (server-side)
             // This socket listens on a specific port for incomming connections.
