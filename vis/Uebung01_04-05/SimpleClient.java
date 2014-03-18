@@ -58,6 +58,28 @@ public class SimpleClient {
 
             // read users input and send it to server.
             // stopping if message is "stop".
+
+            /* 
+            do {
+                String str = new String("stop");
+
+                // Open a BufferedReader from systems InputStreamReader
+                BufferedReader console = new BufferedReader(
+                    new InputStreamReader(System.in));
+                
+                // Reading a message
+                System.out.print("Message:\t");
+                str = console.readLine();
+                if( str.compareTo("stop") != 0 ) {
+                    break;
+                } else {
+                    // "Sending" message
+                    out.println(str);
+                    out.flush();
+                }
+            } while(true);
+            */
+
             String str;
             do {
                 // Opening a console-object which listens on user input
