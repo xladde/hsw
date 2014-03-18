@@ -12,7 +12,7 @@ public class SimpleClient {
     public static final int SERVER_PORT = 8045;
 
     // define WI identification as portnumber
-    //public static final int SERVER_NAME = "rothko.wi.hs-wismar.de";
+    //public static final String SERVER_NAME = "rothko.wi.hs-wismar.de";
     public static final String SERVER_NAME = "127.0.0.1";
 
     // define global Message for clients
@@ -67,6 +67,7 @@ public class SimpleClient {
                 BufferedReader console = new BufferedReader(
                     new InputStreamReader(System.in));
                 // Reading a message
+                System.out.print("Message:\t");
                 str = console.readLine();
                 // "Sending" message
                 out.println(str);
