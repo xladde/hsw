@@ -11,6 +11,12 @@ public class MyHouse implements House {
      * to prevent a message during build.
      */
     //@Deprecated
+
+    /**
+     * The Annotation marks that a deprecation warning message
+     * will be suppressed.
+     */
+    //@SuppressWarnings("deprecation")
     public void open() {}
     public void openFrontDoor() {}
     public void openBackDoor() {}
