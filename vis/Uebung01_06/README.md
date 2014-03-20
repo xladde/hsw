@@ -27,10 +27,11 @@ Es wird eine Warnung produziert, da die Schnittstelle `void open()` als `depreca
 Note: MyHouse.java uses or overrides a deprecated API.
 Note: Recompile with -Xlint:deprecation for details.
 ```
-Diese Warnung kann wie folgt verhindert werden
-0. `public @interface Deprecated {}`
-1. `@SuppressWarnings("deprecation") void open() {}`
-2. `@Deprecated void open() {}`
+Diese Warnung kann wie folgt verhindert werden:
+
+1. Definieren einer Schnittstelle `public @interface Deprecated {}` in einer Datei Deprecated.java,
+2. Annotation `@SuppressWarnings("deprecation")` vor der Implementierung von ` void open()` oder
+3. Annotation `@Deprecated` vor der Implementierung von `void open()`.
 
 
 ----
@@ -44,6 +45,39 @@ public @interface Meal {}
 public void evaluateDiet(){}
 
 ```
+???
+
 
 ----
 **d.) Definieren Sie einen Annotationstyp für eine Supportanfrage mit den Elementen id, beschreibung, bearbeiter und datum. Defaultwerte für bearbeiter soll "unbestimmt" sein, Defaultwert für datum "unbekannt".**
+
+```
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Supportanfrage {
+    String id();
+    String beschreibung();
+    String bearbeiter()     default "unbekannt";
+    String datum()          default "unbestimmt";
+}
+```
+
+Test-Klasse:
+
+```
+@Supportanfrage(id="001", beschreibung="test")
+public class SupportanfrageTest {
+    public SupportanfrageTest() {}
+    public static void main(String[] args) {
+        SupportanfrageTest sat = new SupportanfrageTest();
+        Class c = sat.getClass();
+        @SuppressWarnings("unchecked")
+        Supportanfrage sa = (Supportanfrage)c.getAnnotation(Supportanfrage.class);
+        System.out.println(sa.id());
+        System.out.println(sa.beschreibung());
+        System.out.println(sa.bearbeiter());
+        System.out.println(sa.datum());
+    }
+}
+```
