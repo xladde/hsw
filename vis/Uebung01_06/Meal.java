@@ -2,12 +2,11 @@
  * @author t.j.
  * @version 2014-03
  */
-public @interface Meal {
 
+// for JDK 8
+//@Repeatable(MealContainer.class)
+public @interface Meal {
+    String name();
+    String mainDish();
 }
 
-@Meal("breakfast", mainDish="cereal")
-@Meal("lunch", mainDish="pizza")
-@Meal("dinner", mainDish="salad")
-
-public void evaluateDiet() {}

@@ -6,7 +6,8 @@
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-@Retention(RetentionPolicy.RUNTIME)
+// make it accessible
+@Retention(RetentionPolicy.CLASS)
 public @interface Supportanfrage {
     String id();
     String beschreibung();

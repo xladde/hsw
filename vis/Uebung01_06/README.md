@@ -45,8 +45,41 @@ public @interface Meal {}
 public void evaluateDiet(){}
 
 ```
-???
 
+__`Meal.java`__
+```
+public @interface Meal {
+    String name();
+    String mainDish();
+}
+```
+
+__`MealTest.java`__
+```
+public class MealTest {
+    @Meal(name="breakfast", mainDish="cereal")
+    @Meal(name="lunch", mainDish="pizza")
+    @Meal(name="dinner", mainDish="salad")
+    public void evaluateDiet() {}
+}
+```
+
+Das Übersetzen wird fehlschlagen, da wiederholte Annotationen von Elementen nicht unterstützt werden. Diese Möglichkeit steht erst ab JDK 8 zur verfügung und soll wie folgt erzeugt werden können:
+
+__`Meal.java`__
+```
+@Repeatable(MealContainer.class)
+public @interface Meal {
+    String name();
+    String mainDish();
+}
+```
+__`MealContainer.java`__
+```
+public @interface MealContainer {
+    Meal[] array();
+}
+```
 
 ----
 **d.) Definieren Sie einen Annotationstyp für eine Supportanfrage mit den Elementen id, beschreibung, bearbeiter und datum. Defaultwerte für bearbeiter soll "unbestimmt" sein, Defaultwert für datum "unbekannt".**
