@@ -15,9 +15,13 @@ public class SupportanfrageTest {
 
         @SuppressWarnings("unchecked")
         Supportanfrage sa = (Supportanfrage)c.getAnnotation(Supportanfrage.class);
-        System.out.println(sa.id());
-        System.out.println(sa.beschreibung());
-        System.out.println(sa.bearbeiter());
-        System.out.println(sa.datum());
+        if( sa != null ) {
+            System.out.println(sa.id());
+            System.out.println(sa.beschreibung());
+            System.out.println(sa.bearbeiter());
+            System.out.println(sa.datum());
+        } else {
+            System.out.println("No element of interface 'Supportanfrage'.");
+        }
     }
 }
