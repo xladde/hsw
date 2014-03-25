@@ -6,5 +6,8 @@
 *.class
 
 # ignore tex files
+*.aux
+*.idx
+*.log
 
 # ignore c/c++ files

@@ -1,3 +1,7 @@
+/**
+ * @author t.j.
+ * @version ???
+ */
 
 import javax.swing.*;       // Lib for Java Swing
 import java.awt.*;          // Abstract Window Toolkit
