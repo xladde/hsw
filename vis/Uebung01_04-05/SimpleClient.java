@@ -12,8 +12,8 @@ public class SimpleClient {
     public static final int SERVER_PORT = 8045;
 
     // define WI identification as portnumber
-    //public static final String SERVER_NAME = "rothko.wi.hs-wismar.de";
-    public static final String SERVER_NAME = "127.0.0.1";
+    public static final String SERVER_NAME = "rothko.wi.hs-wismar.de";
+    //public static final String SERVER_NAME = "127.0.0.1";
 
     // define global Message for clients
     public static final String MESSAGE = "Hello dear server.";
