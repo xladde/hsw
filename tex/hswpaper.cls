@@ -1,10 +1,11 @@
-\LoadClass[a4paper, 10pt]{article}
+\LoadClass[a4paper, twocolumn, 12pt]{scrartcl}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswpaper.cls}[2013/08/22 Custom class for simple HSW-Papers]
 
 \RequirePackage[ngerman]{babel}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+\RequirePackage[left=1cm,right=1cm, top=2cm, bottom=3cm]{geometry}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{graphicx}
@@ -16,8 +17,10 @@
 \RequirePackage{cclicenses}
 \RequirePackage{caption}
 \RequirePackage{lipsum}
+\RequirePackage{libertine}
+\RequirePackage{breakurl}
 \RequirePackage{makeidx}			% index generation
-\RequirePackage[intoc]{nomencl}		% nomenclature settings
+%\RequirePackage[intoc]{nomencl}		% nomenclature settings
 
 %
 % CONFIGURATION
@@ -31,18 +34,19 @@
 \addto\captionsngerman{\renewcommand{\figurename}{Abb.}}
 \addto\captionsngerman{\renewcommand{\tablename}{Tab.}}
 
-\renewcommand{\nomname}{Nomenklatur}
-\setlength{\nomlabelwidth}{.25\hsize}
-\renewcommand{\nomlabel}[1]{#1 \dotfill}
-\setlength{\nomitemsep}{-\parsep}
-\providecommand{\printnomenclature}{\printglossary}
-\providecommand{\makenomenclature}{\makeglossary}
+\renewcommand{\refname}{Quellenverzeichnis}
+%\renewcommand{\nomname}{Nomenklatur}
+%\setlength{\nomlabelwidth}{.25\hsize}
+%\renewcommand{\nomlabel}[1]{#1 \dotfill}
+%\setlength{\nomitemsep}{-\parsep}
+%\providecommand{\printnomenclature}{\printglossary}
+%\providecommand{\makenomenclature}{\makeglossary}
 
 
 \algrenewtext{Function}[2]{\algorithmicfunction\ \texttt{#1}( #2 ):}
 \algrenewtext{Procedure}[2]{\algorithmicprocedure\ \texttt{#1}( #2 ):}
 
-\bibliographystyle{natdin}
+\bibliographystyle{plainnat}
 
 \lstset{
 	title={\lstname}, 
@@ -81,7 +85,7 @@
 \algblockdefx[ClassBlock]{Class}{EndClass}%
     [1]{\textbf{class} \textsc{#1}\textbf{:}}%
     {\textbf{end class;}}
-    
+   
 
 \makeindex
-\makenomenclature
+%\makenomenclature
