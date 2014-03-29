@@ -1,4 +1,4 @@
-\LoadClass[a4paper, twocolumn, 12pt]{scrartcl}
+\LoadClass[a4paper, twocolumn, 11pt]{scrartcl}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswpaper.cls}[2013/08/22 Custom class for simple HSW-Papers]
 
@@ -78,6 +78,16 @@
 \providecommand{\Euro}[1]{\EUR{#1}}
 \providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
 \providecommand{\Ohm}[1]{$#1\;\Omega$}
+
+\providecommand{\Code}[3]{\lstinputlisting[language=C,caption=#2,label={src:#3}]{#1}}
+\providecommand{\Image}[5][0.9]{
+    \begin{center}
+    \includegraphics[width=#1\columnwidth]{#2}
+    \captionof{figure}{#3}
+    \small{#4}
+    \label{#5}
+    \end{center}
+}
 
 \algblockdefx[StructureBlock]{Structure}{EndStructure}%
     [1]{\textbf{structure} \textsc{#1}\textbf{:}}%
