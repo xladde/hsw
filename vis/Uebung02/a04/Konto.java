@@ -1,3 +1,7 @@
+/**
+ * @author t.j.
+ * @version 2014-03
+ */
 public class Konto {
     private double kontostand;
     public Konto(double startbetrag) {

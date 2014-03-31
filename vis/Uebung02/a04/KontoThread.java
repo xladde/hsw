@@ -1,3 +1,7 @@
+/**
+ * @author t.j.
+ * @version 2014-03
+ */
 public class KontoThread extends Thread {
 
     private String name;
