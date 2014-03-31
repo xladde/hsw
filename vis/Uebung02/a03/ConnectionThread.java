@@ -1,3 +1,7 @@
+/**
+ * @author t.j.
+ * @version 2014-03
+ */
 import java.io.*;
 import java.net.*;
 
@@ -7,13 +11,15 @@ public class ConnectionThread extends Thread {
     private int            id;
     private BufferedReader in;
     private PrintStream    out;
+    private ServerThread   srv;
 
-    public ConnectionThread(int id, Socket s) {
+    public ConnectionThread(int id, Socket s, ServerThread srv) {
         try {
-            this.id = id;
+            this.srv    = srv;
+            this.id     = id;
             this.socket = s;
-            this.in = new BufferedReader( new InputStreamReader(socket.getInputStream()) );
-            this.out = new PrintStream(socket.getOutputStream()); 
+            this.in     = new BufferedReader( new InputStreamReader(socket.getInputStream()) );
+            this.out    = new PrintStream(socket.getOutputStream()); 
         } catch( Exception e ){}
         
     }
@@ -34,6 +40,7 @@ public class ConnectionThread extends Thread {
             in.close();
             out.close();
             socket.close();
+            srv.getConnections().remove( this );
         } catch(Exception e){}
         
     }
