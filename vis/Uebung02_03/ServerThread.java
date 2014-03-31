@@ -21,7 +21,7 @@ public class ServerThread {
                 Socket s = server.accept();
                 if( s != null ) {
                     ConnectionThread con = new ConnectionThread(++counter, s);
-                    con.run();
+                    con.start();
                     //connections.add(new ConnectionThread(connections.size()+1, s));
                     //connections.get(connections.size()-1).run();
                 }

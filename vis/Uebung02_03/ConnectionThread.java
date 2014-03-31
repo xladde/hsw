@@ -1,7 +1,7 @@
 import java.io.*;
 import java.net.*;
 
-public class ConnectionThread implements Runnable {
+public class ConnectionThread extends Thread {
 
     private Socket         socket;
     private int            id;
