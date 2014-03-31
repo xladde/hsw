@@ -6,7 +6,7 @@ public class ServerThread {
 
     public static final int PORT_NUMBER = 8045;
     private ServerSocket server;
-    public ArrayList<ConnectionThread> connections;
+    //public ArrayList<ConnectionThread> connections;
     private int counter = 0;
     public ServerThread() {
         try {

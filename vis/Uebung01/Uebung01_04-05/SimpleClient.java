@@ -94,6 +94,7 @@ public class SimpleClient {
                 // "Sending" message
                 out.println(str);
                 out.flush();
+                System.out.println( "Answer:\t" + in.readLine() );
             } while( str.compareTo("stop") != 0 );
 
 
