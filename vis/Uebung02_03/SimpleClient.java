@@ -84,7 +84,6 @@ public class SimpleClient {
             do {
                 // Opening a console-object which listens on user input
                 //Console console = System.console();
-
                 // Open a BufferedReader from systems InputStreamReader
                 BufferedReader console = new BufferedReader(
                     new InputStreamReader(System.in));

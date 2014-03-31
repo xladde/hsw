@@ -4,15 +4,16 @@ import java.net.*;
 public class ConnectionThread implements Runnable {
 
     private Socket         socket;
+    private int            id;
     private BufferedReader in;
     private PrintStream    out;
 
-    public ConnectionThread(Socket s) {
+    public ConnectionThread(int id, Socket s) {
         try {
+            this.id = id;
             this.socket = s;
             this.in = new BufferedReader( new InputStreamReader(socket.getInputStream()) );
-            this.out = new PrintStream(socket.getOutputStream());
-            run();  
+            this.out = new PrintStream(socket.getOutputStream()); 
         } catch( Exception e ){}
         
     }
@@ -21,11 +22,12 @@ public class ConnectionThread implements Runnable {
         try {
             String str;
             do {
-                str = in.readLine();
-                System.out.println( "Client:\t" + str );
+                str = "Client "+this.id+": ";
+                str += in.readLine();
+                System.out.println( str );
                 out.println( "Accepted." );
                 out.flush();
-            } while( str.compareTo("stop") != 0 );
+            } while( str.compareTo("Client "+this.id+": stop") != 0 );
 
             /* ANNOYING OVERHEAD */
             // close connections and streams

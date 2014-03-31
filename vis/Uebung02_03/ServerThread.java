@@ -2,12 +2,12 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class ServerThread implements Runnable {
+public class ServerThread {
 
     public static final int PORT_NUMBER = 8045;
     private ServerSocket server;
     public ArrayList<ConnectionThread> connections;
-
+    private int counter = 0;
     public ServerThread() {
         try {
             server = new ServerSocket(PORT_NUMBER);
@@ -20,7 +20,9 @@ public class ServerThread implements Runnable {
             while( true ) {
                 Socket s = server.accept();
                 if( s != null ) {
-                    connections.add(new ConnectionThread(s));
+                    ConnectionThread con = new ConnectionThread(++counter, s);
+                    con.run();
+                    //connections.add(new ConnectionThread(connections.size()+1, s));
                     //connections.get(connections.size()-1).run();
                 }
             }
