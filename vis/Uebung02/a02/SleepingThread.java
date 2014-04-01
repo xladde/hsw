@@ -13,11 +13,8 @@ public class SleepingThread extends Thread {
     public void run() {
         Date startTime = new Date();
         
-        try {
-
-            Thread.currentThread().sleep( (int) (1000*Math.random()) );
-        
-        } catch(Exception ex) {}
+        try { Thread.currentThread().sleep( (int) (1000*Math.random()) ); }
+        catch(Exception ex) { /* ...Doing Nothing... */ }
 
         long elapsedTime = new Date().getTime() - startTime.getTime();
         System.out.println(Thread.currentThread().getName() + 

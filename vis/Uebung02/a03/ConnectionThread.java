@@ -20,13 +20,15 @@ public class ConnectionThread extends Thread {
             this.socket = s;
             this.in     = new BufferedReader( new InputStreamReader(socket.getInputStream()) );
             this.out    = new PrintStream(socket.getOutputStream()); 
-        } catch( Exception e ){}
+        } catch( Exception e ){
+
+        }
         
     }
 
     public void run() {
         try {
-            String str;
+            String str = new String("stop");
             do {
                 str = "Client "+this.id+": ";
                 str += in.readLine();
@@ -40,7 +42,7 @@ public class ConnectionThread extends Thread {
             in.close();
             out.close();
             socket.close();
-            srv.getConnections().remove( this );
+            srv.removeConnection( this );
         } catch(Exception e){}
         
     }
