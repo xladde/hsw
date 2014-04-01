@@ -1,6 +1,6 @@
 /**
  * @author t.j.
- * @version 2014-03
+ * @version 2014-04
  */
 
 import java.lang.Thread;
@@ -17,10 +17,18 @@ public class Applikation2 {
     public static void main(String[] args) {
         ArrayList<ThreadPrio> arr = new ArrayList<ThreadPrio>();
 
+        // get sleeptime in milliseconds
+        int sleep = 0;
+        if( args.length == 1 ){
+            try {
+                sleep = Integer.parseInt(args[0]);
+            }catch(Exception e){ sleep = SLEEP; }
+        } else {sleep = SLEEP; }
+
         // create threads
-        arr.add( new ThreadPrio("T1", LOOPS, SLEEP, Thread.MAX_PRIORITY) );
-        arr.add( new ThreadPrio("T2", LOOPS, SLEEP, Thread.NORM_PRIORITY) );
-        arr.add( new ThreadPrio("T3", LOOPS, SLEEP, Thread.MIN_PRIORITY) );
+        arr.add( new ThreadPrio("T1", LOOPS, sleep, Thread.MAX_PRIORITY) );
+        arr.add( new ThreadPrio("T2", LOOPS, sleep, Thread.NORM_PRIORITY) );
+        arr.add( new ThreadPrio("T3", LOOPS, sleep, Thread.MIN_PRIORITY) );
         //arr.add( new ThreadPrio("T4", LOOPS, SLEEP, Thread.MAX_PRIORITY) );
 
         // run threads

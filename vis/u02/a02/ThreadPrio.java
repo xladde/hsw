@@ -15,9 +15,7 @@ public class ThreadPrio extends Thread {
      * Crates an instance of 'ThreadPrio'.
      */
     public ThreadPrio(String name, int loops, int sleeptime) {
-        this.name       = name;
-        this.loops      = loops;
-        this.sleeptime  = sleeptime;
+        configure(name, loops, sleeptime, Thread.NORM_PRIORITY);
     }
 
     /**
@@ -25,12 +23,16 @@ public class ThreadPrio extends Thread {
      * Crates an instance of 'ThreadPrio' with a given Priority.
      */
     public ThreadPrio(String name, int loops, int sleeptime, int prio) {
+        configure(name, loops, sleeptime, prio);
+    }
+    
+    private void configure(String name, int loops, int sleeptime, int prio) {
         this.name       = name;
         this.loops      = loops;
         this.sleeptime  = sleeptime;
         this.setPriority(prio);
     }
-    
+
     /**
      * What to do on run ...
      */
