@@ -50,6 +50,17 @@
 \setlength{\nomitemsep}{-\parsep}
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
+%
+% ADDITIONAL UNITS AND SYMBOLS
+%
+\providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
+\providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
+\providecommand{\Copyright}[1]{{\textcopyright\;#1}}
+\providecommand{\Copyleft}[1]{{\textcopyleft\;#1}}
+\providecommand{\Euro}[1]{\EUR{#1}}
+\providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
+\providecommand{\Ohm}[1]{$#1\;\Omega$}
+
 
 \geometry{
 	inner=3cm,
@@ -67,7 +78,7 @@
 	pdfborder={0 0 0},	
 	backref=false, 
 	colorlinks=false, 
-	pdftitle={\textcopyleft\;open.xladde---Wismar, \today}, 
+	pdftitle={Thomas\ Jonitz\ ---\ Wismar,\ \today}, 
 	pdfauthor={t.j.}
 }
 
@@ -141,13 +152,3 @@
 \algrenewtext{Function}[2]{\algorithmicfunction\ \texttt{#1}( #2 ):}
 \algrenewtext{Procedure}[2]{\algorithmicprocedure\ \texttt{#1}( #2 ):}
 
-%
-% ADDITIONAL UNITS AND SYMBOLS
-%
-\providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
-\providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
-\providecommand{\Copyright}[1]{{\textcopyright\;#1}}
-\providecommand{\Copyleft}[1]{{\textcopyleft\;#1}}
-\providecommand{\Euro}[1]{\EUR{#1}}
-\providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
-\providecommand{\Ohm}[1]{$#1\;\Omega$}

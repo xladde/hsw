@@ -1,4 +1,4 @@
-\LoadClass[a4paper, twocolumn, 11pt]{scrartcl}
+\LoadClass[a4paper, twocolumn, 12pt]{scrartcl}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswpaper.cls}[2013/08/22 Custom class for simple HSW-Papers]
 

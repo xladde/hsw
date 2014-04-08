@@ -23,9 +23,12 @@ public class ThreadPrio extends Thread {
      * Crates an instance of 'ThreadPrio' with a given Priority.
      */
     public ThreadPrio(String name, int loops, int sleeptime, int prio) {
-        configure(name, loops, sleeptime, prio);
+        configure(name, loops, sleeptime, prio); 
     }
-    
+
+    /**
+     * Configuration of Thread.
+     */    
     private void configure(String name, int loops, int sleeptime, int prio) {
         this.name       = name;
         this.loops      = loops;
@@ -38,11 +41,22 @@ public class ThreadPrio extends Thread {
      */
     @Override
     public void run() {
+        
+        //ackermann(2,3);
         for(int i = 0; i < loops; i++) {
-            try {
-                Thread.sleep(sleeptime);
-                System.out.println(name + ":\t" + i + "\t" + getPriority());
-            } catch(InterruptedException ex) {}
+        //    try {
+        //        Thread.sleep(sleeptime);
+            System.out.println(name + ":\t" + i + "\t" + ackermann(2,5));        
+        //        System.out.println(name + ":\t" + i + "\t" + getPriority()+"\n");
+        //    } catch(Exception ex) {}
         }
+    }
+
+    public int ackermann(int m, int n) {
+        if( m==0 ) { return n+1; }
+        else if( n==0 ) 
+            { return ackermann(m-1, 1); }
+        else
+            { return ackermann( m-1, ackermann(m, n-1) ); }
     }
 }

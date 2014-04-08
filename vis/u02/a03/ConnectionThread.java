@@ -26,6 +26,8 @@ public class ConnectionThread extends Thread {
         
     }
 
+    public int getId() { return this.id; }
+
     public void run() {
         try {
             String str = new String("stop");

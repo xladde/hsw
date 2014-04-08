@@ -29,7 +29,7 @@ public class Applikation2 {
         arr.add( new ThreadPrio("T1", LOOPS, sleep, Thread.MAX_PRIORITY) );
         arr.add( new ThreadPrio("T2", LOOPS, sleep, Thread.NORM_PRIORITY) );
         arr.add( new ThreadPrio("T3", LOOPS, sleep, Thread.MIN_PRIORITY) );
-        //arr.add( new ThreadPrio("T4", LOOPS, SLEEP, Thread.MAX_PRIORITY) );
+        arr.add( new ThreadPrio("T4", LOOPS, sleep, Thread.MAX_PRIORITY) );
 
         // run threads
         for(ThreadPrio t: arr) { 

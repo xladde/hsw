@@ -36,14 +36,14 @@ public class ServerThread extends Thread {
                 Socket s = server.accept();
                 this.connections.add( new ConnectionThread(this.counter++, s, this) );
                 this.connections.get( this.connections.size()-1 ).start();
-                System.out.println("New incomming Connection registered.");
+                System.out.println("New incomming Connection from "+s.getInetAddress().toString());
             } while( running );
         } catch(Exception e) { /* ... */ }
     }
 
     public void removeConnection( ConnectionThread ct ) {
         if( this.connections.contains( ct ) ) {
-            System.out.println("Removing " + ct.toString());
+            System.out.println("Removing Client " + ct.getId());
             this.connections.remove( ct );
         }
     }
