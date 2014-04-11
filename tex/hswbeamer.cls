@@ -12,7 +12,7 @@
 \RequirePackage[T1]{fontenc}		% fontencryption
 \RequirePackage[ngerman]{babel}		% language package
 \RequirePackage[numbers]{natbib}	% bibliography
-
+\RequirePackage{pgf}
 \RequirePackage{amsmath}			% math symbols etc
 \RequirePackage{amssymb}			% math symbols
 
@@ -139,3 +139,8 @@
 \providecommand{\Euro}[1]{\EUR{#1}}
 \providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
 \providecommand{\Ohm}[1]{$#1\;\Omega$}
+
+
+
+\institute[HS Wismar]{Hochschule Wismar -- University of Applied Sciences: Technology, Business and Design}
+\titlegraphic{\includegraphics[scale=0.2]{hsw-fww.jpg}}

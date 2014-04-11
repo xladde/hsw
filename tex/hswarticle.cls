@@ -1,4 +1,4 @@
-\LoadClass[papersize=a4paper, fontsize=13pt]{scrartcl}
+\LoadClass[papersize=a4paper, fontsize=12pt]{scrartcl}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswarticle}[2013/08/20 Custom class for KOMA-Articles]
 
