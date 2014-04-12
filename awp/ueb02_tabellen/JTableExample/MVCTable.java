@@ -11,8 +11,8 @@ public class MVCTable extends JPanel
   Object    weinListe[][] = {
     {"Scheurebe", new Double(21.10)},
     {"Riesling", new Double(27.50)},
-    {"Weiﬂburgunder", new Double(26.60)},
-    {"Sp‰tburgunder", new Double(28.80)},
+    {"Weissburgunder", new Double(26.60)},
+    {"Spaetburgunder", new Double(28.80)},
     {"Portugieser", new Double(22.40)}
   };
   Object    columnNames[] = {"Bestellnr.", "Rebsorte", "Abbildung", "Sektpreis/Liter", "Flaschengr.", "Verkaufte Flaschen", "Gesamtpreis", "Lieferung" };
@@ -100,7 +100,7 @@ public class MVCTable extends JPanel
               setValueAt(weinIcons[i], row, 2);
             }
         }
-        // ge‰nderten Daten werden angezeigt
+        // geaenderten Daten werden angezeigt
         fireTableDataChanged();
       }
     };
@@ -122,7 +122,7 @@ public class MVCTable extends JPanel
     for (int i=0; i<weinListe.length; i++)
       weinSorte.addItem(weinListe[i][0]);
         
-    // Flaschengrˆssen
+    // Flaschengroessen
     JComboBox flaschen = new JComboBox();
     flaschen.addItem(new Double(0.2));
     flaschen.addItem(new Double(0.75));
