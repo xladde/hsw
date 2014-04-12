@@ -18,6 +18,11 @@ public class AdvancedTable extends JFrame {
         this.setSize(640,480);
         
         this.table = new JTable(new MyTableModel(tableHeader, tableData));
+        
+        JComboBox cbx = (JComboBox)tableData[0][3];
+        this.table.getColumn("ZIP").setCellEditor(new DefaultCellEditor(cbx));
+        this.table.getColumn("City").setCellEditor(new DefaultCellEditor(cbx));
+
         this.scrollPane = new JScrollPane(table);
         this.getContentPane().add(this.scrollPane);
 

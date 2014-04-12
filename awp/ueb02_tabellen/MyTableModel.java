@@ -29,7 +29,10 @@ public class MyTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int row, int col) {
-        return tableData[row][col];
+        if(col == 3 || col == 5) {
+            JComboBox cbx = (JComboBox)tableData[row][col];
+            return cbx.getSelectedItem();
+        } else {return tableData[row][col];}
     }
 
     public Class getColumnClass(int c) {

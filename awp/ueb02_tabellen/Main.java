@@ -9,7 +9,7 @@ public class Main {
 
     // TEST DATA: COLUMN HEADER
     public static Object[] tableHeader = {
-        "Nr.", "Name", "Country", "State", "ZIP", "City", "Street", "Number"
+        "Nr.", "Name", "Country", "ZIP", "State", "City", "Street", "Number"
     };
 
     // TEST DATA: SIMPLE TABLE DATA
