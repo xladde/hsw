@@ -22,15 +22,15 @@ public class Main {
     };
 
     // TEST DATA: PLZ
-    public static Integer[] plz = { 
+    public static Object[] plz = { 
         new Integer(23966), new Integer(20357) 
     };
-    public static JComboBox plzBox = new JComboBox(plz);
+    public static JComboBox<Object> plzBox = new JComboBox<Object>(plz);
     // TEST DATA: CITY
-    public static String[] city = { 
+    public static Object[] city = { 
         new String("Wismar"), new String("Hamburg") 
     };
-    public static JComboBox cityBox = new JComboBox(city);
+    public static JComboBox<Object> cityBox = new JComboBox<Object>(city);
     
     // TEST DATA: ADVANCED TABLE DATA
     public static Object[][] advancedTableData = {
@@ -46,7 +46,6 @@ public class Main {
      */
     public static void main(String[] args) {
         //new SimpleTable(tableHeader, simpleTableData);
-        new AdvancedTable(tableHeader, advancedTableData);
-
+        new AdvancedTable();
     }    
 }
