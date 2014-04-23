@@ -17,7 +17,7 @@ public class MyTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-            return header.length;
+        return header.length;
     }
 
     @Override
@@ -64,14 +64,6 @@ public class MyTableModel extends AbstractTableModel {
     @Override
     public void setValueAt(Object value, int row, int col) {
         data[row][col] = value;
-        switch(col) {
-            case 4:
-                break;
-            case 5:
-                break;
-            default:
-                break;
-        }
         fireTableCellUpdated(row, col);
     }
 

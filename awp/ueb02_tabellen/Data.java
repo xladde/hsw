@@ -8,19 +8,19 @@ import javax.swing.JComboBox;
 
 public class Data {
 
-    private static final Object[] HEADER = {
+    public static final Object[] HEADER = {
         new String("ID"), new String("Name"), new String("Street"), new String("Number"), new String("City"), new String("ZIP")
     };
 
-    private static final String NAMES[] = {
+    public static final String NAMES[] = {
         new String("Gottlob Frege"), new String("Klaus Stoertebeker"), new String("Max Mustermann")  
     };
 
-    private static final String STREETS[] = {
+    public static final String STREETS[] = {
         new String("Irgendeine-Strasse"), new String("Hauptstrasse"), new String("Nebenstrasse"), 
     };
 
-    private static final String NUMBERS[] = {
+    public static final String NUMBERS[] = {
         new String("13a"), new String("9"), new String("17")  
     };
 
