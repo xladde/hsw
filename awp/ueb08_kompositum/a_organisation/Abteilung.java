@@ -5,10 +5,22 @@
 
 import java.util.ArrayList;
 
+/**
+ * @todo Getter/Setter für Instanzvariable orgs.
+ * @todo Methode zum Löschen eienr Organisationseinheit aus der ArrayList
+ */
 public class Abteilung extends Organisationseinheit {
 
+    /**
+     * Instanzvariable speichert Organisationseinheiten, die der
+     * Abteilung zugehörig sind.
+     */
     private ArrayList<Organisationseinheit> orgs;
 
+    /**
+     * Konstruktor zur Erzeugung einer Instanz vom Typ Abteilung.
+     * @param bezeichnung Die Bezeichnung der Abteilung.
+     */
     public Abteilung(String bezeichnung) {
         super(bezeichnung);
         orgs = new ArrayList<Organisationseinheit>();
@@ -26,6 +38,7 @@ public class Abteilung extends Organisationseinheit {
      * Organisationseinheit auslesen.
      * @param Index der auszulesenden Organisationseinheit
      * @return Objekt vom Typ Organisationseinheit.
+     * @todo Exceptions abfangen.
      */
     public Organisationseinheit getOrganisationseinheit(int index) {
         try {
