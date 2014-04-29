@@ -1,6 +1,6 @@
-\LoadClass[papersize=a4paper, fontsize=13pt]{scrbook}
+\LoadClass[papersize=a4paper, fontsize=12pt]{scrartcl}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{hswbook}[2013/08/20 Custom class for HSW (KOMA-)Books]
+\ProvidesClass{hswarticle}[2013/08/20 Custom class for KOMA-Articles]
 
 \RequirePackage{fixltx2e}			% fix latex
 \RequirePackage[utf8]{inputenc}		% inputencryption
@@ -42,12 +42,6 @@
 %
 % CONFIG
 %
-\renewcommand\thepart{\Roman{part}}
-\renewcommand\thechapter{\arabic{chapter}}
-\renewcommand\thesection{\arabic{section}}
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\renewcommand\thesubsubsection{\thesection.\thesubsection.\arabic{subsubsection}}
-
 \addto\captionsngerman{\renewcommand{\figurename}{Abb.}} % change figure text
 \addto\captionsngerman{\renewcommand{\tablename}{Tab.}}  % change figure text
 \renewcommand{\nomname}{Nomenklatur}
@@ -56,12 +50,23 @@
 \setlength{\nomitemsep}{-\parsep}
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
+%
+% ADDITIONAL UNITS AND SYMBOLS
+%
+\providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
+\providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
+\providecommand{\Copyright}[1]{{\textcopyright\;#1}}
+\providecommand{\Copyleft}[1]{{\textcopyleft\;#1}}
+\providecommand{\Euro}[1]{\EUR{#1}}
+\providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
+\providecommand{\Ohm}[1]{$#1\;\Omega$}
+
 
 \geometry{
-	inner=2.5cm,
-	outer=2.5cm,
-	top=2.5cm,
-	bottom=2.5cm
+	inner=3cm,
+	outer=3cm,
+	top=3cm,
+	bottom=3cm
 }
 
 \hypersetup{
@@ -73,7 +78,7 @@
 	pdfborder={0 0 0},	
 	backref=false, 
 	colorlinks=false, 
-	pdftitle={Thomas\,Jonitz\,--\, Wismar,\,\today}, 
+	pdftitle={Thomas\ Jonitz\ ---\ Wismar,\ \today}, 
 	pdfauthor={t.j.}
 }
 
@@ -104,9 +109,6 @@
 
 \newcounter{RomanPages} 
 
-%
-% COMMANDS
-%
 %
 % COMMANDS
 %
@@ -147,43 +149,6 @@
 	\setcounter{page}{\value{RomanPages}+1}
 }
 
-\providecommand{\BMDefault}[1]{
-    \addcontentsline{toc}{part}{Verzeichnisse}
-	\addcontentsline{toc}{section}{Tabellenverzeichnis}
-	\listoftables
-	\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-	\listoffigures
-	\addcontentsline{toc}{section}{Literaturverzeichnis}
-	\bibliography{#1}{}
-	\bibliographystyle{alphadin}
-	%\addcontentsline{toc}{section}{Nomenklatur}
-	\printnomenclature{} 
-	
-}
-
-\providecommand{\Appendix}{
-	\setcounter{part}{0}
-	\setcounter{chapter}{1}
-	\setcounter{section}{1}
-	\setcounter{subsection}{1}
-	\renewcommand\thepart{\Alph{part}}
-	\renewcommand\thechapter{\Alph{chapter}}
-	\renewcommand\thesection{\alph{section}}
-	\renewcommand\thesubsection{\thesection.\alph{subsection}}
-	\clearpage
-	\appendix
-}
-
 \algrenewtext{Function}[2]{\algorithmicfunction\ \texttt{#1}( #2 ):}
 \algrenewtext{Procedure}[2]{\algorithmicprocedure\ \texttt{#1}( #2 ):}
 
-%
-% ADDITIONAL UNITS AND SYMBOLS
-%
-\providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
-\providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
-\providecommand{\Copyright}[1]{{\textcopyright\;#1}}
-\providecommand{\Copyleft}[1]{{\textcopyleft\;#1}}
-\providecommand{\Euro}[1]{\EUR{#1}}
-\providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
-\providecommand{\Ohm}[1]{$#1\;\Omega$}
