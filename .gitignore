@@ -11,3 +11,10 @@
 *.log
 
 # ignore c/c++ files
+/vis/t2/uebung_00/nbproject/private/
+/vis/t2/Uebung0/nbproject/private/
+/vis/t2/Uebung0/Uebung0-war/nbproject/private/
+/vis/t2/Uebung0/Uebung0-ejb/nbproject/private/
+/vis/t2/Uebung0/Uebung0-war/build/
+/vis/t2/Uebung0/Uebung0-ejb/dist/
+/vis/t2/Uebung0/Uebung0-ejb/build/
