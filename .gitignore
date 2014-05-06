@@ -5,22 +5,47 @@
 # ignore java files
 *.class
 
+
 # ignore tex files
 *.aux
 *.idx
 *.log
 
-# ignore c/c++ files
-/vis/t2/uebung_00/nbproject/private/
-/vis/t2/Uebung0/nbproject/private/
-/vis/t2/Uebung0/Uebung0-war/nbproject/private/
-/vis/t2/Uebung0/Uebung0-ejb/nbproject/private/
-/vis/t2/Uebung0/Uebung0-war/build/
-/vis/t2/Uebung0/Uebung0-ejb/dist/
-/vis/t2/Uebung0/Uebung0-ejb/build/
-/vis/t2/Uebung1/nbproject/private/
-/vis/t2/Uebung1/Uebung1-war/nbproject/private/
-/vis/t2/Uebung1/Uebung1-ejb/nbproject/private/
-/vis/t2/Uebung1-app-client/nbproject/private/
-/vis/t2/Uebung1-app-client/build/
-/vis/t2/Uebung1-app-client/dist/
+# ignore netbeans
+/vis/t2/*
+/vis/t2/EnterpriseApplication0/nbproject/
+/vis/t2/EnterpriseApplication0/build/
+/vis/t2/EnterpriseApplication0/dist/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-war/nbproject/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-war/build/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-war/dist/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-ejb/nbproject/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-ejb/build/
+/vis/t2/EnterpriseApplication0/EnterpriseApplication0-ejb/dist/
+
+/vis/t2/EnterpriseApplication1/nbproject/
+/vis/t2/EnterpriseApplication1/build/
+/vis/t2/EnterpriseApplication1/dist/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-war/nbproject/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-war/build/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-war/dist/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-ejb/nbproject/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-ejb/build/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-ejb/dist/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-app-client/nbproject/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-app-client/build/
+/vis/t2/EnterpriseApplication1/EnterpriseApplication1-app-client/dist/
+
+/vis/t2/EnterpriseApplication2/nbproject/
+/vis/t2/EnterpriseApplication2/build/
+/vis/t2/EnterpriseApplication2/dist/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-war/nbproject/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-war/build/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-war/dist/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-ejb/nbproject/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-ejb/build/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-ejb/dist/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-app-client/nbproject/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-app-client/build/
+/vis/t2/EnterpriseApplication2/EnterpriseApplication2-app-client/dist/
+
