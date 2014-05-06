@@ -12,7 +12,6 @@
 *.log
 
 # ignore netbeans
-/vis/t2/
 /vis/t2/EnterpriseApplication0/nbproject/
 /vis/t2/EnterpriseApplication0/build/
 /vis/t2/EnterpriseApplication0/dist/
