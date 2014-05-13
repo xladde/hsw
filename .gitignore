@@ -1,4 +1,7 @@
 # ignore IDE patterns
+## eclipse
+*.classpath
+*.project
 
 # ignore global file paterns
 
@@ -10,6 +13,9 @@
 *.aux
 *.idx
 *.log
+
+# ignore eclipse
+
 
 # ignore netbeans
 /vis/t2/EnterpriseApplication0/nbproject/
