@@ -13,20 +13,20 @@
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
 \RequirePackage{textcomp}
-\RequirePackage[numbers]{natbib}
+%\RequirePackage[numbers]{natbib}
 \RequirePackage{cclicenses}
 \RequirePackage{caption}
 \RequirePackage{lipsum}
 \RequirePackage{libertine}
 \RequirePackage{breakurl}
-\RequirePackage{makeidx}			% index generation
-%\RequirePackage[intoc]{nomencl}		% nomenclature settings
+\RequirePackage{makeidx}            % index generation
+%\RequirePackage[intoc]{nomencl}        % nomenclature settings
 
 %
 % CONFIGURATION
 %
-\renewcommand\theparagraph{\roman{paragraph}}
-\renewcommand\thesubparagraph{\theparagraph.\alph{subparagraph})}
+%\renewcommand\theparagraph{\roman{paragraph}}
+%\renewcommand\thesubparagraph{\theparagraph.\alph{subparagraph})}
 
 
 \setcounter{secnumdepth}{5}
@@ -49,22 +49,22 @@
 \bibliographystyle{plainnat}
 
 \lstset{
-	title={\lstname}, 
+    title={\lstname}, 
     breakatwhitespace=false,
-	showspaces=false,
-	showstringspaces=false, 
-	basicstyle={\small\ttfamily},                          
-	commentstyle={\small\ttfamily},                              
-	keywordstyle={\small\ttfamily},       
-	numberstyle={\small\ttfamily},       
-	stringstyle={\small\ttfamily},                   
-	breaklines={true}, 
-	captionpos={b}, 
-	numbers=left,       
-  	stepnumber=1,                   
-  	numbersep=2em,
-  	tabsize=2,
-  	xleftmargin=3em
+    showspaces=false,
+    showstringspaces=false, 
+    basicstyle={\small\ttfamily},                          
+    commentstyle={\small\ttfamily},                              
+    keywordstyle={\small\ttfamily},       
+    numberstyle={\small\ttfamily},       
+    stringstyle={\small\ttfamily},                   
+    breaklines={true}, 
+    captionpos={b}, 
+    numbers=left,       
+    stepnumber=1,                   
+    numbersep=2em,
+    tabsize=2,
+    xleftmargin=3em
 }
 
 %
@@ -102,5 +102,5 @@
     {\textbf{end class;}}
    
 
-\makeindex
+%\makeindex
 %\makenomenclature

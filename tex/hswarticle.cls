@@ -50,6 +50,13 @@
 \setlength{\nomitemsep}{-\parsep}
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
+
+
+%
+% ADDITIONAL COMMANDS
+%
+\providecommand{\Quote}[1]{\textit{\glqq #1\grqq}}
+
 %
 % ADDITIONAL UNITS AND SYMBOLS
 %
@@ -113,7 +120,7 @@
 % COMMANDS
 %
 \providecommand{\Rule}[1][1]{\centerline{\rule[0mm]{#1\columnwidth}{1pt}}}
-\providecommand{\Cite}[3]{\footnote{\citealp[#1][#3]{#2}}}
+%\providecommand{\Cite}[3]{\footnote{\citealp[#1][#3]{#2}}}
 \providecommand{\Code}[3]{\lstinputlisting[language=C, caption=#2, label={src:#3}]{#1}}
 \providecommand{\Item}[2]{\item{\textbf{#1:~}#2}}
 
