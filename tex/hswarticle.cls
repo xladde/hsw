@@ -48,6 +48,7 @@
 \setlength{\nomlabelwidth}{.25\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \setlength{\nomitemsep}{-\parsep}
+%\setlength{\parskip}{2.5pt}
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
 
