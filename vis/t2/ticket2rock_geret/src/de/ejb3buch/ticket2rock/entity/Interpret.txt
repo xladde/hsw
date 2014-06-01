@@ -1,0 +1,68 @@
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "TYP", discriminatorType
+                            = DiscriminatorType.CHAR)
+@DiscriminatorValue("I")
+public abstract class Interpret {
+
+	private int id;
+
+	private String name;
+
+	private Set<Album> alben;
+
+	private List<Song> songs;
+
+	private List<Konzert> konzerte;
+
+	private List<Tournee> tourneen;
+
+
+	@OneToMany(cascade = CascadeType.ALL,
+	    fetch = FetchType.LAZY, mappedBy="interpret")
+	public List<Konzert> getKonzerte() {
+		return konzerte;
+	}
+
+
+	public void setKonzerte(List<Konzert> konzerte) {
+		this.konzerte = konzerte;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL,
+	  fetch = FetchType.LAZY, mappedBy = "interpret")
+	public List<Song> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(List<Song> songs) {
+		this.songs = songs;
+	}
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+
+	//weitere set-get-Methoden
+
+	@OneToMany(cascade = CascadeType.ALL,
+	   fetch = FetchType.LAZY, mappedBy="interpret")
+	public Set<Album> getAlben() {
+	      return alben;
+	}
+
+	public void setAlben(Set<Album> alben) {
+		this.alben = alben;
+	}
+
+
+	@OneToMany(cascade = CascadeType.ALL,
+	   fetch = FetchType.LAZY, mappedBy="interpret")
+	public List<Tournee> getTourneen() {
+		return tourneen;
+	}
+
+   //weitere set-Methode
+	}

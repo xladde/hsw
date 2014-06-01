@@ -1,0 +1,92 @@
+<!--
+	Ticket2Rock ist die Beispielanwendung des Buchs "EJB 3 professionell" (dpunkt).
+	Es implementiert eine einfache Webanwendung zur Onlinebuchung von Tickets fuer
+	Rockkonzerte auf Basis von EJB 3.0 und JavaServer Faces.
+	
+	Copyright (C) 2006
+	Jo Ehm, Dierk Harbeck, Stefan M. Heldt, Oliver Ihns, Jochen Joerg, Holger Koschek,
+	Carsten Sahling, Roman Schloemmer
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"
+				template="template.xhtml">
+
+<ui:define name="content">
+  <div class="section">
+    <h1><h:outputText value="#{msg.ticketbestellung_title}" /></h1>
+  </div>
+  
+  <div class="section">     
+	<h:form id="ticketbestellungForm">
+	
+	  <h:panelGrid columns="2" rowClasses="centered" border="0">
+          <h:outputLabel for="interpret" value="#{msg.ticketbestellung_interpret}"/>
+          <h:outputText id="interpret" value="#{TicketController.konzert.interpret.name}" />
+          <h:outputLabel for="date" value="#{msg.ticketbestellung_date}" />
+          <h:outputText id="date" value="#{TicketController.konzert.datum}">
+			 <f:convertDateTime timeZone="GMT+1" pattern="#{msg.konzertsuchergebnis_dateformat}" />
+		  </h:outputText>
+          <h:outputLabel for="location" value="#{msg.ticketbestellung_location}" />
+          <h:outputText id="location" value="#{TicketController.konzert.ort.name}" />
+          <h:outputLabel for="ort" value="#{msg.ticketbestellung_address}" />
+          <h:outputText id="ort" value="#{TicketController.konzert.ort.adresse}" />
+          <h:outputLabel for="tourneename" value="#{msg.ticketbestellung_tournee}" />
+          <h:outputText id="tourneename" value="#{TicketController.konzert.tournee.name}" />
+          <h:outputLabel for="availableExpresseion" value="#{msg.ticketbestellung_ticketkontingent}" />
+          <h:outputText id="availableExpression" value="#{TicketController.availableTicketsExpression}" />
+       </h:panelGrid>
+      
+	  <fieldset>
+		<div class="entry">
+			<div class="label"><h:outputLabel value="#{msg.ticketbestellung_ticketanzahl}" /></div>
+			<div class="input">
+				<h:inputText id="ticketnumber" value="#{TicketController.ticketanzahl}" required="true" 
+				validator="#{TicketController.validateTicketOrder}" />
+		    </div>
+		    <span class="errors"><h:message for="ticketnumber" /></span>
+		
+		</div>
+        <div class="entry errors"><h:messages globalOnly="true" /></div>
+        <div class="entry">
+			<div class="label">&#160;</div>
+			<div class="input">
+				 <h:commandButton id="submitOrder" class="button" action="#{TicketController.bestelleTickets}" 
+							value="#{msg.ticketbestellung_order}" />&#160;&#160;
+				 <h:commandButton id="submitCancel" class="button" immediate="true" action="cancel" 
+		        	value="#{msg.ticketbestellung_cancel}" />		        		        	
+			</div>
+	    </div>
+      </fieldset>            
+          
+   </h:form>
+
+  
+  </div>
+</ui:define>
+
+<!-- sidebar -->
+<ui:define name="sidebar">
+<p>
+Hier kann ein Benutzer Konzerttickets bestellen -- under construction
+</p>
+</ui:define>
+
+</ui:composition>

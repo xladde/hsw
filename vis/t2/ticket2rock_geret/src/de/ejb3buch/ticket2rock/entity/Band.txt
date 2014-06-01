@@ -1,0 +1,26 @@
+@Entity
+@DiscriminatorValue("B")
+public class Band extends Interpret {
+
+	private int gruendungsjahr;
+
+	private Set<Musiker> musiker;
+
+	public int getGruendungsjahr() {
+		return gruendungsjahr;
+	}
+
+	public void setGruendungsjahr(int gruendungsjahr) {
+		this.gruendungsjahr = gruendungsjahr;
+	}
+
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	public Set<Musiker> getMusiker() {
+		return musiker;
+	}
+
+	public void setMusiker(Set<Musiker> musiker) {
+		this.musiker = musiker;
+	}
+}

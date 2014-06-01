@@ -1,0 +1,50 @@
+<!--
+	Ticket2Rock ist die Beispielanwendung des Buchs "EJB 3 professionell" (dpunkt).
+	Es implementiert eine einfache Webanwendung zur Onlinebuchung von Tickets fuer
+	Rockkonzerte auf Basis von EJB 3.0 und JavaServer Faces.
+	
+	Copyright (C) 2006
+	Jo Ehm, Dierk Harbeck, Stefan M. Heldt, Oliver Ihns, Jochen Joerg, Holger Koschek,
+	Carsten Sahling, Roman Schloemmer
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+
+ <!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	    		xmlns:ui="http://java.sun.com/jsf/facelets"
+	  			xmlns:h="http://java.sun.com/jsf/html"
+	  			xmlns:f="http://java.sun.com/jsf/core"	  			
+	  			xmlns:a4j="https://ajax4jsf.dev.java.net/ajax"
+				template="template.xhtml">
+
+<!-- content -->
+<ui:define name="content">
+   <h:form>
+        <h:inputText size="50" value="#{BandController.textAjax}" > 
+           <a4j:support event="onkeyup" reRender="rep"/>
+         </h:inputText>
+     <h:outputText value="#{BandController.textAjax}" id="rep"/>
+   </h:form>
+</ui:define>
+
+<!-- sidebar -->
+<ui:define name="sidebar">
+ <p>
+ Dies ist ein Test
+</p> 
+</ui:define>
+
+</ui:composition>

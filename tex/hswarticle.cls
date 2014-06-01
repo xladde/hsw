@@ -56,7 +56,7 @@
 %
 % ADDITIONAL COMMANDS
 %
-\providecommand{\Quote}[1]{\textit{\glqq #1\grqq}}
+\providecommand{\Quote}[1]{\textit{\glqq #1\grqq\ }}
 
 %
 % ADDITIONAL UNITS AND SYMBOLS
@@ -86,7 +86,7 @@
 	pdfborder={0 0 0},	
 	backref=false, 
 	colorlinks=false, 
-	pdftitle={Thomas\ Jonitz\ ---\ Wismar,\ \today}, 
+	pdftitle={Thomas\ Jonitz}, 
 	pdfauthor={t.j.}
 }
 

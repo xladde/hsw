@@ -7,7 +7,7 @@
 
 # ignore java files
 *.class
-
+*.jar
 
 # ignore tex files
 *.aux
@@ -54,3 +54,12 @@
 /vis/t2/EnterpriseApplication2/EnterpriseApplication2-app-client/build/
 /vis/t2/EnterpriseApplication2/EnterpriseApplication2-app-client/dist/
 
+/vis/t2/VIS-T2-Reisebuero/nbproject/private/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-war/nbproject/private/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-ejb/nbproject/private/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-war/build/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-ejb/dist/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-ejb/build/
+/vis/t2/VIS-T2-Reisebuero/build/
+/vis/t2/VIS-T2-Reisebuero/dist/
+/vis/t2/VIS-T2-Reisebuero/VIS-T2-Reisebuero-war/dist/

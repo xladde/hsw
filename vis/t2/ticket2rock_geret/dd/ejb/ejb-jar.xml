@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+	Ticket2Rock ist die Beispielanwendung des Buchs "EJB 3 professionell" (dpunkt).
+	Es implementiert eine einfache Webanwendung zur Onlinebuchung von Tickets für
+	Rockkonzerte auf Basis von EJB 3.0 und JavaServer Faces.
+	
+	Copyright (C) 2006
+	Jo Ehm, Dierk Harbeck, Stefan M. Heldt, Oliver Ihns, Jochen Jörg, Holger Koschek,
+	Carsten Sahling, Roman Schloemmer
+	
+	This program is free software; you can redistribute it and/or
+	modify it under the terms of the GNU General Public License
+	as published by the Free Software Foundation; either version 2
+	of the License, or (at your option) any later version.
+	
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with this program; if not, write to the Free Software
+	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+
+<ejb-jar xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi.schemaLocation="http://java.sun.com/xml/ns/javaee
+						http://java.sun.com/xml/ns/javaee/ejb-jar_3_0.xsd"
+	version="3.0">
+	<enterprise-beans>
+		<message-driven>
+			<ejb-name>StornoMessageBean</ejb-name>
+			<message-destination-type>
+				javax.jms.Queue
+			</message-destination-type>
+			<activation-config>
+				<activation-config-property>
+					<activation-config-property-name>
+						destinationType
+					</activation-config-property-name>
+					<activation-config-property-value>
+						javax.jms.Queue
+					</activation-config-property-value>
+				</activation-config-property>
+				<activation-config-property>
+					<activation-config-property-name>
+						destination
+					</activation-config-property-name>
+					<activation-config-property-value>
+						queue/ticket2rock
+					</activation-config-property-value>
+				</activation-config-property>
+			</activation-config>
+		</message-driven>
+		<session>
+ 			<ejb-name>Admin</ejb-name>
+			<ejb-class>de.ejb3buch.ticket2rock.session.admin.AdminBean</ejb-class>
+			<!--
+				Die Deklaration der Lebenszyklus-Callbacks ist spezifisch für
+				den JBoss-Applikationsserver, da sich die Spezifikation an dieser
+				Stelle leider ausschweigt.
+			-->
+			<post-construct>
+				<lifecycle-callback-method>onPostConstruct</lifecycle-callback-method>
+			</post-construct>
+		</session>	
+		<session>
+ 			<ejb-name>AbfangjaegerBeanKlasseninterzeptor</ejb-name>
+			<ejb-class>de.ejb3buch.ticket2rock.session.demo.klasseninterzeptor.AbfangjaegerBean</ejb-class>
+		</session>	
+		<session>
+ 			<ejb-name>AbfangjaegerBeanKlasseninterzeptorDD</ejb-name>
+ 			<local>de.ejb3buch.ticket2rock.session.demo.AbfangjaegerLocal</local>
+			<ejb-class>de.ejb3buch.ticket2rock.session.demo.klasseninterzeptor.dd.AbfangjaegerBean</ejb-class>
+			<session-type>Stateless</session-type>
+		</session>	
+		<session>
+			<ejb-name>AbfangjaegerBeanMethodeninterzeptor</ejb-name>
+			<ejb-class>de.ejb3buch.ticket2rock.session.demo.methodeninterzeptor.AbfangjaegerBean</ejb-class>
+		</session>	
+		<session>
+			<ejb-name>AbfangjaegerBeanMethodeninterzeptorDD</ejb-name>
+ 			<local>de.ejb3buch.ticket2rock.session.demo.AbfangjaegerLocal</local>
+			<ejb-class>de.ejb3buch.ticket2rock.session.demo.methodeninterzeptor.dd.AbfangjaegerBean</ejb-class>
+			<session-type>Stateless</session-type>
+		</session>	
+		<session>
+			<ejb-name>AuskunftBean</ejb-name>
+ 			<local>de.ejb3buch.ticket2rock.session.AuskunftLocal</local>
+ 			<remote>de.ejb3buch.ticket2rock.session.Auskunft</remote>
+			<ejb-class>de.ejb3buch.ticket2rock.session.AuskunftBean</ejb-class>
+			<session-type>Stateless</session-type>
+		</session>	
+		<session>
+			<ejb-name>BestellvorgangBean</ejb-name>
+ 			<local>de.ejb3buch.ticket2rock.session.ticketbestellung.BestellvorgangLocal</local>
+ 			<remote>de.ejb3buch.ticket2rock.session.ticketbestellung.Bestellvorgang</remote>
+			<ejb-class>de.ejb3buch.ticket2rock.session.ticketbestellung.BestellvorgangBean</ejb-class>
+			<session-type>Stateful</session-type>
+		</session>	
+		<session>
+			<ejb-name>AuskunftBeanOldStyle</ejb-name>
+ 			<local-home>de.ejb3buch.ticket2rock.migration.session.AuskunftLocalHome</local-home>
+ 			<local>de.ejb3buch.ticket2rock.migration.session.AuskunftLocal</local>
+			<ejb-class>de.ejb3buch.ticket2rock.migration.session.AuskunftBean</ejb-class>
+			<session-type>Stateless</session-type>
+			<transaction-type>Container</transaction-type>
+		</session>	
+	</enterprise-beans>
+	<interceptors>
+		<interceptor>
+			<interceptor-class>de.ejb3buch.ticket2rock.session.demo.Abfangjaeger</interceptor-class>
+			<around-invoke>
+				<method-name>onMethodCall</method-name>
+			</around-invoke>
+		</interceptor>
+	</interceptors>
+ 	<assembly-descriptor>
+ 	    <container-transaction>
+ 	      <method>
+ 	        <ejb-name>AuskunftBean</ejb-name>
+ 	        <method-name>*</method-name>
+ 	      </method>
+ 	      <trans-attribute>Supports</trans-attribute>
+ 	    </container-transaction>
+ 		<interceptor-binding>
+			<ejb-name>*</ejb-name>
+			<interceptor-class>
+				de.ejb3buch.ticket2rock.session.interceptor.BeanStatisticsInterceptor
+			</interceptor-class>
+		</interceptor-binding>
+		<!-- 
+		    Die folgende Definition dient nur Demonstrationszwecken -
+		    BeanStatisticsBean wurde bereits per Annotation vom Default-
+		    Interzeptor entbunden
+		-->
+		<interceptor-binding>
+			<ejb-name>BeanStatisticsBean</ejb-name>
+			<exclude-default-interceptors/>
+		</interceptor-binding>
+ 		<interceptor-binding>
+ 			<ejb-name>AbfangjaegerBeanKlasseninterzeptorDD</ejb-name>
+ 			<interceptor-class>de.ejb3buch.ticket2rock.session.demo.Abfangjaeger</interceptor-class>
+ 		</interceptor-binding>
+ 		<interceptor-binding>
+ 			<ejb-name>AbfangjaegerBeanKlasseninterzeptorDD</ejb-name>
+ 			<exclude-class-interceptors/>
+ 			<method-name>michNicht</method-name>
+ 		</interceptor-binding>
+ 		<interceptor-binding>
+ 			<ejb-name>AbfangjaegerBeanMethodeninterzeptorDD</ejb-name>
+ 			<interceptor-class>de.ejb3buch.ticket2rock.session.demo.Abfangjaeger</interceptor-class>
+ 			<method-name>fangMichAb</method-name>
+ 		</interceptor-binding>
+		<interceptor-binding>
+ 			<ejb-name>AbfangjaegerBeanMethodeninterzeptorDD</ejb-name>
+ 			<interceptor-class>de.ejb3buch.ticket2rock.session.demo.Abfangjaeger</interceptor-class>
+ 			<method-name>michAuch</method-name>
+ 			<method-params>
+ 				<method-param>java.lang.Object</method-param>
+ 			</method-params>
+ 		</interceptor-binding>
+	</assembly-descriptor>
+</ejb-jar>

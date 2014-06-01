@@ -1,0 +1,33 @@
+@Entity
+public class Ticketbestellung {
+	private int id;
+
+	private Konzert konzert;
+
+	private Kunde kunde;
+
+	private int anzahl;
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@ManyToOne
+	public Konzert getKonzert() {
+		return konzert;
+	}
+    //weitere set-Methode
+
+	@ManyToOne
+	public Kunde getKunde() {
+		return kunde;
+	}
+
+	//weitere get-Methode
+}

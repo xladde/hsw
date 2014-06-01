@@ -1,0 +1,51 @@
+
+@Entity
+public class Song {
+
+	private int id;
+
+	private String titel;
+
+	private Interpret interpret;
+
+	private Musikgenre genre;
+
+	private Album album;
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@ManyToOne
+	public Interpret getInterpret() {
+		return interpret;
+	}
+
+	public void setInterpret(Interpret interpret) {
+		this.interpret = interpret;
+	}
+
+	@ManyToOne
+	public Musikgenre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Musikgenre genre) {
+		this.genre = genre;
+	}
+
+	@ManyToOne
+	public Album getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(Album album) {
+		this.album = album;
+	}
+}

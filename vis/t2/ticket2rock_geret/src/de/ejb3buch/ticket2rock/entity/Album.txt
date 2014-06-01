@@ -1,0 +1,46 @@
+
+@Entity
+public class Album {
+
+	private int id;
+
+	private String titel;
+
+	private Date erscheinungsdatum;
+
+	private Interpret interpret;
+
+	private List<Song> songs;
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	//hier weitere get- und set-Methoden
+
+	@ManyToOne
+	public Interpret getInterpret() {
+		return interpret;
+	}
+
+	public void setInterpret(Interpret interpret) {
+		this.interpret = interpret;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL,
+	                         fetch = FetchType.EAGER,
+	                         mappedBy = "album")
+	public List<Song> getSongs() {
+		return songs;
+	}
+
+	public void setSongs(List<Song> songs) {
+		this.songs = songs;
+	}
+}

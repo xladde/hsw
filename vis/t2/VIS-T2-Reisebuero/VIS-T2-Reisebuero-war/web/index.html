@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Verteilte Informationssysteme Teil 2 - Reiseb&uuml;ro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Willkommen im Reiseb&uuml;ro</h1>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th><h2>Kunde hinzuf&uuml;gen</h2></th>
+                    <th><h2>Kunde suchen</h2></th>
+                </tr>
+                <tr>
+                    <td>
+                        <form action="insert.jsp" name="datenerfassung">
+                            <table>
+                                <tr>
+                                    <td>Nachname:</td>
+                                    <td><input name="nachname" type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Vorname:</td>
+                                    <td><input name="vorname" type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Adresse:</td>
+                                    <td><input name="adresse" type="text"/></td>
+                                </tr>
+                                <tr>
+                                    <td>Kreditkarte:</td>
+                                    <td><input name="kreditkarte" type="text"/></td>
+                                </tr>
+                            </table>
+                            <input type="submit" value="Kunde anlegen" name="abschicken" />
+                        </form>
+                    </td>
+                    <!--
+                        Kunde Suchen
+                    //-->
+                    <td>
+                        <form name="sucheNN" action="sucheKunden.jsp">
+                            <input type="text" name="nachname2" value="Mustermann" size="25" />
+                            <input type="submit" value="Suche" name="abschicken2" />
+                        </form>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

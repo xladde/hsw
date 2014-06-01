@@ -1,0 +1,26 @@
+@Entity
+@DiscriminatorValue("M")
+public class Musiker extends Interpret {
+
+	private String geburtsname;
+
+	private Set<Band> bands;
+
+	public String getGeburtsname() {
+		return geburtsname;
+	}
+
+	public void setGeburtsname(String geburtsname) {
+		this.geburtsname = geburtsname;
+	}
+
+
+	@ManyToMany(fetch = FetchType.EAGER,mappedBy="musiker")
+	public Set<Band> getBands() {
+		return bands;
+	}
+
+	public void setBands(Set<Band> bands) {
+		this.bands = bands;
+	}
+}
