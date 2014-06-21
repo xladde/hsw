@@ -31,6 +31,7 @@
 \RequirePackage{cclicenses}			% CC-Icons
 
 \RequirePackage{xcolor}				% use colors
+\RequirePackage{tikz}				% insert logo to head
 
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
@@ -42,6 +43,10 @@
 \RequirePackage{geometry}
 \RequirePackage{hyperref}
 
+
+\setbeamertemplate{section in head/foot}{\hfill\insertsectionheadnumber.~\insertsectionhead}
+\setbeamertemplate{section in head/foot shaded}{\color{structure!50}\hfill\insertsectionheadnumber.~\insertsectionhead}
+\setbeamertemplate{section in toc}{\inserttocsectionnumber.~\inserttocsection}
 
 \geometry{left=1cm, right=1cm}
 \hypersetup{colorlinks=false}
@@ -55,6 +60,22 @@
 \setlength{\nomlabelwidth}{.25\hsize}
 \renewcommand{\nomlabel}[1]{#1 \dotfill}
 \setlength{\nomitemsep}{-\parsep}
+%
+% ADDITIONAL COMMANDS
+%
+\providecommand{\Quote}[1]{\textit{\glqq #1\grqq\ }}
+
+%
+% ADDITIONAL UNITS AND SYMBOLS
+%
+\providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
+\providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
+\providecommand{\Copyright}[1]{{\textcopyright\;#1}}
+\providecommand{\Copyleft}[1]{{\textcopyleft\;#1}}
+\providecommand{\Euro}[1]{\EUR{#1}}
+\providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
+\providecommand{\Ohm}[1]{$#1\;\Omega$}
+
 \providecommand{\printnomenclature}{\printglossary}
 \providecommand{\makenomenclature}{\makeglossary}
 
@@ -142,5 +163,10 @@
 
 
 
-\institute[HS Wismar]{Hochschule Wismar -- University of Applied Sciences: Technology, Business and Design}
-\titlegraphic{\includegraphics[scale=0.2]{hsw-fww.jpg}}
+\institute[HS Wismar]{Hochschule Wismar -- University of Applied Sciences: Technology, Business and Design\\Fakult\"{a}t f\"{u}r Wirtschaftswissenschaften}
+\titlegraphic{\includegraphics[scale=0.2]{fischer-green.png}}
+
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=-15pt,xshift=-15pt] at (current page.north east) {\includegraphics[scale=0.1]{fischer-green.png}};
+\end{tikzpicture}}
