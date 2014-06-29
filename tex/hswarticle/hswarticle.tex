@@ -5,6 +5,7 @@
 \date{Wismar, \today}
 
 \makeindex
+\makenomenclature
 \begin{document}
     \maketitle
     \vfill
@@ -64,19 +65,34 @@
         
         
         \subsection{Nomenklatur}
-        \lstinputlisting[language=TeX,caption={Nomenklatur Siehe Abbildung \ref{fig:nomenclature}}]{img/nomenclature.tex}
+            \lstinputlisting[language=TeX,caption={Nomenklatur siehe Abbildung \ref{fig:nomenclature}}]{img/nomenclature.tex}
+            \begin{figure}[p]
+                \begin{center}
+                \fbox{\includegraphics[scale=0.6]{img/nomenclature.pdf}}
+                \caption{Beispiel-Nomenklatur}
+                \label{fig:nomenclature}
+                \end{center}
+            \end{figure}
         
         \subsection{Literaturverzeichnis}
-        Das Literaturverzeichnis wird wie nachfolgend dargestellt eingebunden.
-        \begin{lstlisting}[caption={Einbinden des Literaturverzeichnisses}]
-\addcontentsline{toc}{section}{Literaturverzeichnis}
-\bibliography{<bibtex-datei>}
-\bibliographystyle{<bibtex-stil>}
-        \end{lstlisting}
-        Für die Angabe \texttt{<bibtex-stil>} werden die Varianten \texttt{alphadin} oder \texttt{plain} empfohlen. Eine Zitierung im Text wird wie folgt umgesetzt.
-        \begin{lstlisting}
-Dieser Text wird zitiert (vgl. \cite{Mustermann2014}, S. 42)
-        \end{lstlisting}
+        \lstinputlisting[language=TeX,caption={Bib\TeX -Datei}]{img/literature.bib}
+        \lstinputlisting[language=TeX,caption={Litraturverzeichnis siehe Abbildung \ref{fig:literature}}]{img/literature.tex}
+            \begin{figure}[p]
+                \begin{center}
+                \fbox{\includegraphics[scale=0.6]{img/literature.pdf}}
+                \caption{Beispiel-Literaturverzeichniss (Stil: \texttt{alphadin})}
+                \label{fig:literature}
+                \end{center}
+            \end{figure}
+            \begin{figure}[p]
+                \begin{center}
+                \fbox{\includegraphics[scale=0.6]{img/literature-plain.pdf}}
+                \caption{Beispiel-Literaturverzeichnis (Stil: \texttt{plain})}
+                \label{fig:literature}
+                \end{center}
+            \end{figure}
+        Alternativ wird auch der Stil \texttt{plain} empfohlen.
+        
         
         \subsection{Anhang}
         

@@ -1,0 +1,25 @@
+\documentclass{../hswarticle}
+\title{Ein \LaTeX -Dokument ohne Inhalt}
+\author{Max Mustermann}
+\date{\today}
+\makeindex
+\begin{document}
+    \tableofcontents
+    
+    \section{Nachtlied im Dschungel}
+    
+    \begin{quote}
+        \glqq Nun bringt Tschil, der Milan, die Nacht mit heim,\\
+        und Mang, die Fledermaus, bringt sie in Gang.\\
+        Die Herden sind in Stall und Schuppen eingesperrt,\\
+        denn wir gehen nun um, bis es d\"{a}mmert.\\
+        Dies ist die Stunde des Stolzes, der Macht,\\
+        der Kralle, des Sto\ss zahns, der Klaue.\\
+        Oh, h\"{o}rt den Ruf! -- Gute Jagd all denen,\\
+        die das Gesetz des Dschungels einhalten!\grqq\footnote{vgl. \cite{Kipling1894}, S. 7}
+    \end{quote}
+    
+    \addcontentsline{toc}{section}{Literatur}
+    \bibliographystyle{alphadin}
+    \bibliography{literature}
+\end{document}

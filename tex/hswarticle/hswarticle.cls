@@ -114,8 +114,8 @@
 %
 % Additional commands and symbols
 %
-\providecommand{\printnomenclature}{\printglossary}
-\providecommand{\makenomenclature}{\makeglossary}
+%\providecommand{\printnomenclature}{\printglossary}
+%\providecommand{\makenomenclature}{\makeglossary}
 \providecommand{\Quote}[1]{\textit{\glqq #1\grqq\ }}
 \providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
 \providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
