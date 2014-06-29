@@ -13,6 +13,8 @@
 *.aux
 *.idx
 *.log
+*.pdf
+*.nlo
 
 # ignore eclipse
 
