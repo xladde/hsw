@@ -80,24 +80,24 @@
 \definecolor{dblue}{rgb}{0.0,0.0,0.3}
 
 \lstset{
-	backgroundcolor={\color{lgray}},   
-	breakatwhitespace=false,
-	showspaces=false,
-	showstringspaces=false, 
-	basicstyle={\footnotesize\ttfamily\color{black}},                          
-	commentstyle={\footnotesize\ttfamily\color{darkgray}},                              
-	keywordstyle={\footnotesize\ttfamily\color{dblue}},       
-	numberstyle={\footnotesize\ttfamily\color{black}},       
-	stringstyle={\footnotesize\ttfamily\color{dgreen}},  
-	title={Src: \lstname},                  
-	breaklines={true}, 
-	captionpos={b}, 
-	frame={l},
-	numbers=left,       
-  	stepnumber=1,                   
-  	numbersep=10pt,
-  	tabsize=2,
-  	xleftmargin=2em
+    backgroundcolor={\color{lgray}},   
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false, 
+    basicstyle={\footnotesize\ttfamily\color{black}},                          
+    commentstyle={\footnotesize\ttfamily\color{darkgray}},                              
+    keywordstyle={\footnotesize\ttfamily\color{dblue}},       
+    numberstyle={\footnotesize\ttfamily\color{black}},       
+    stringstyle={\footnotesize\ttfamily\color{dgreen}},  
+%	title={Src: \lstname},                  
+    breaklines={true}, 
+    captionpos={b}, 
+    frame={l},
+    numbers=left,       
+    stepnumber=1,                   
+    numbersep=10pt,
+    tabsize=2,
+    xleftmargin=2em
 }
 
 \newcounter{RomanPages} 

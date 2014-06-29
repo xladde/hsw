@@ -57,10 +57,6 @@
 % ADDITIONAL COMMANDS
 %
 \providecommand{\Quote}[1]{\textit{\glqq #1\grqq\ }}
-
-%
-% ADDITIONAL UNITS AND SYMBOLS
-%
 \providecommand{\Registered}[1]{#1\;\textsuperscript{\textregistered}}
 \providecommand{\Trademark}[1]{#1\;\textsuperscript{\texttrademark}}
 \providecommand{\Copyright}[1]{{\textcopyright\;#1}}

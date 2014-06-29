@@ -1,0 +1,105 @@
+\documentclass{hswarticle}
+
+\author{Thomas Jonitz}
+\title{Dokumentation  \LaTeX -Klasse \texttt{hswarticle}}
+\date{Wismar, \today}
+
+\makeindex
+\begin{document}
+    \maketitle
+    \vfill
+    \begin{center}
+        \includegraphics[scale=0.5]{hsw-all-dark.eps}
+    \end{center}
+    \vfill
+    \begin{abstract}
+        Nachfolgende Dokumentation beschreibt die \LaTeX -Klasse \texttt{hswarticle}, die als Grundlage für wissenschaftliche Dokumente an der Hochschule Wismar verwendet werden kann. Sie folgt grundlegenden Formatierungsrichtlinien und orientiert sich am Corparate Design der Hochschule.
+    \end{abstract}
+    \clearpage
+    
+    \addcontentsline{toc}{section}{Inhaltsverzeichnis}
+    \tableofcontents
+    
+    
+    \clearpage
+    
+    \section{Einstieg und Verwendung}
+        Die Klasse \texttt{hswarticle} muss sich im Verzeichnis des zu erstellenden Dokuments befinden. Geladen wird sie mit nachfolgender Anweisung.
+        \begin{lstlisting}[caption={Laden der Klasse}]
+\documentclass{hswarticle}
+        \end{lstlisting}        
+        Danach folgen bereits die Angaben zu Autor, Titel und Datum. Die Grundkonfiguration muss in der Regel nicht verändert werden. Die Seitenmaße sind mit dem \texttt{geometry}-Paket fix gesetzt, können in der Klasse aber angepasst werden.
+        \begin{lstlisting}[caption={Konfiguration der Seitenränder \texttt{hswarticle.cls}}]
+\RequirePackage{geometry}
+\geometry{
+    inner=3cm,
+    outer=3cm,
+    top=3cm,
+    bottom=3cm
+}
+        \end{lstlisting}         
+        Ein Dokument kann also entsprechend folgenden Aufbau haben:
+        \begin{lstlisting}[caption={Grundkonfiguration}] 
+\documentclass{hswarticle}
+\title{Ein \LaTeX -Dokument ohne Inhalt}
+\author{Max Mustermann}
+\date{\today}
+\begin{document}
+    
+\end{document}
+        \end{lstlisting}
+        Innerhalb der \texttt{document}-Umgebung kann nun der eigentliche Content mit den üblichen \LaTeX -Anweisungen erstellt werden (\texttt{section}, \texttt{subsection}, \verb+\maketitle+, usw.).
+             
+    
+    \section{Verzeichnisse und Sonderseiten}
+        \subsection{Titelseite}
+            \lstinputlisting[language=TeX,caption={Titelseite siehe Abbildung \ref{fig:titlepage}}]{img/titlepage.tex}
+            \begin{figure}[p]
+                \begin{center}
+                \fbox{\includegraphics[scale=0.6]{img/titlepage.pdf}}
+                \caption{Beispiel-Titelseite}
+                \label{fig:titlepage}
+                \end{center}
+            \end{figure}
+        
+        
+        \subsection{Nomenklatur}
+        \lstinputlisting[language=TeX,caption={Nomenklatur Siehe Abbildung \ref{fig:nomenclature}}]{img/nomenclature.tex}
+        
+        \subsection{Literaturverzeichnis}
+        Das Literaturverzeichnis wird wie nachfolgend dargestellt eingebunden.
+        \begin{lstlisting}[caption={Einbinden des Literaturverzeichnisses}]
+\addcontentsline{toc}{section}{Literaturverzeichnis}
+\bibliography{<bibtex-datei>}
+\bibliographystyle{<bibtex-stil>}
+        \end{lstlisting}
+        Für die Angabe \texttt{<bibtex-stil>} werden die Varianten \texttt{alphadin} oder \texttt{plain} empfohlen. Eine Zitierung im Text wird wie folgt umgesetzt.
+        \begin{lstlisting}
+Dieser Text wird zitiert (vgl. \cite{Mustermann2014}, S. 42)
+        \end{lstlisting}
+        
+        \subsection{Anhang}
+        
+        
+    \section{Farbgebung und Logos}
+    
+    \section{Inhalte erstellen}
+        \subsection{Zitate}
+        \subsection{Hervorhebungen}
+        \subsection{Abbildungen}
+        \subsection{Tabellen}
+        \subsection{Mathematik-Umgebung}
+        \subsection{Algorithmen}
+        \subsection{Quelltexte}
+    \section{Zusätzliche Befehle}
+    \section{Sonderzeichen und zusätzliche Symbole}
+    
+    \clearpage
+    \appendix
+    \pagenumbering{Roman}
+    \addcontentsline{toc}{section}{Abbildungsverzeichnis}
+    \listoffigures
+    \addcontentsline{toc}{section}{Tabellenverzeichnis}
+    \listoftables
+    
+\end{document}
