@@ -1,9 +1,10 @@
 #Teil I
 
 ##1. Grundlagen und Begriffe
-    a) Skalierbarkeit ist die Fähigkeit die Leistung eines Systems durch hinzufügen oder entfernen von Ressourcen (meist linear) zu steigern, oder zu reduzieren. Zwei Aspekte: 
-        1. Hardware muss aufeinander abgestimmt sein, um "Flaschenhälse" zu vermeiden
-		2. Softwarearchitektur/Lastskalierbarkeit: dass ein System bei geringer, mittlerer, hoher Last keine zu große Verzögerung aufweist und die Anfragen rasch abgearbeitet werden können.
+
+a) Skalierbarkeit ist die Fähigkeit die Leistung eines Systems durch hinzufügen oder entfernen von Ressourcen (meist linear) zu steigern, oder zu reduzieren. Zwei Aspekte: 
+	1. Hardware muss aufeinander abgestimmt sein, um "Flaschenhälse" zu vermeiden
+	2. Softwarearchitektur/Lastskalierbarkeit: dass ein System bei geringer, mittlerer, hoher Last keine zu große Verzögerung aufweist und die Anfragen rasch abgearbeitet werden können.
     b) Synchronisation: Eine Anfragesynchronisierung kann bei großen Systemen (WANs) zu Verzögerungen führen.
     c) 
         c.1 Transparenz vs. Offenheit: Transparenz=durchsitig/Offenheit=zugreifbar
