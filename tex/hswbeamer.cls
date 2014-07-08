@@ -1,4 +1,5 @@
 \LoadClass{beamer}
+\mode<presentation>
 \usetheme{default}
 %\usetheme[height=25mm]{Rochester}
 \usecolortheme[RGB={0,100,0}]{structure} 
@@ -11,7 +12,8 @@
 \RequirePackage[utf8]{inputenc}		% inputencryption
 \RequirePackage[T1]{fontenc}		% fontencryption
 \RequirePackage[ngerman]{babel}		% language package
-\RequirePackage[numbers]{natbib}	% bibliography
+%\RequirePackage{natbib}	% bibliography
+\RequirePackage[numbers]{biblatex}
 \RequirePackage{pgf}
 \RequirePackage{amsmath}			% math symbols etc
 \RequirePackage{amssymb}			% math symbols
