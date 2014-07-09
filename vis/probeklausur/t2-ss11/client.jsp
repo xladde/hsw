@@ -12,24 +12,26 @@
 <html>
     <head><title>...</title></head>
     <body>
-        <%
-            try {
-                Context ctx = new InitialContext();
-                Object ref = ctx.lookup("StraftatenVerwaltungInterface");
-                StraftatenVerwaltungInterface i = (StraftatenVerwaltungInterface)ref;
+    <%
+        try {
+            Context ctx = new InitialContext();
+            Object ref = ctx.lookup("StraftatenVerwaltungInterface");
+            StraftatenVerwaltungInterface i = (StraftatenVerwaltungInterface)ref;
 
-                Straftat s = new Straftat();
-                s.setMeldendePerson(v1);
-                s.setSachverhalt(v2);
-                s.setTatOrt(v3);
-                s.setTatZeit(v4);
-                s.setTatHergang(v5);
-                s.setZeugen(v6);
-                s.setGeschaedigter(v7);
-                s.setTaeter(v8);
+            Straftat s = new Straftat();
+            s.setMeldendePerson(v1);
+            s.setSachverhalt(v2);
+            s.setTatOrt(v3);
+            s.setTatZeit(v4);
+            s.setTatHergang(v5);
+            s.setZeugen(v6);
+            s.setGeschaedigter(v7);
+            s.setTaeter(v8);
 
-                i.speichereStraftat(s);
-            }
-        %>
+            i.speichereStraftat(s);
+        } catch(NamingException e) {
+            // Handling Exception here ...
+        }
+    %>
     </body>
 </html>
