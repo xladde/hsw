@@ -5,6 +5,10 @@
 \author[\Copyright{Uwe L\"{a}mmel, Thomas Jonitz}]{Prof. Dr.-Ing Uwe L\"{a}mmel \and Thomas Jonitz (B.Sc.)}
 \date{Wismar, \today}
 %\logo{\includegraphics[height=1cm]{fischer.png}}
+\titlegraphic{\includegraphics[scale=0.05]{img/hsw-wings.jpg}}
+
+\bibliography{literatur}
+
 \begin{document}
 
 
@@ -15,23 +19,19 @@
     \end{quote}
 \end{frame}
 
-
-\begin{frame}{Vorstellung}
-    \begin{description}
-    \item[Name:]Thomas Jonitz ($\ast$ 1987 in Stralsund)
-    \item[2007:]Abitur (Mathematik, Informatik)
-    \item[2009:]Industrietechnologe (Datentechnik)
-    \item[2013:]Bachelor of Science (Wirtschaftsinfromatik)\\Masterstudiengang WI (IT-SysArch)
-    \item[Trivia:]Regelmäßige Tutorien und Seminare in \Quote{Einführung in die Programmierung} und \Quote{Anwendungsprogrammierung} seit 2009.
-    \end{description}   
-\end{frame}
-
 \begin{frame}
     \maketitle
 \end{frame}
 
 \begin{frame}{Inhaltsverzeichnis}{Agenda}
-    \tableofcontents
+    \begin{columns}
+        \begin{column}{0.4\textwidth}
+            \includegraphics[width=0.9\columnwidth]{img/java-tm.jpg}
+        \end{column}
+        \begin{column}{0.6\textwidth}
+            \tableofcontents[hideothersections]
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \include{0-einfuehrung}

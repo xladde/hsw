@@ -52,7 +52,7 @@
 \definecolor{all}{RGB}{47, 50, 41}
 \definecolor{silver}{RGB}{175, 175, 175}
 \definecolor{lsilver}{RGB}{240, 240, 240}
-\definecolor{wings}{RGB}{0,0,150}
+\definecolor{wings}{RGB}{0,50,95}
 \definecolor{dgreen}{rgb}{0.0,0.3,0.0}
 \definecolor{dblue}{rgb}{0.0,0.0,0.3}
 

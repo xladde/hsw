@@ -2,42 +2,42 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswarticle}[2013/08/20 Custom class for KOMA-Articles]
 
-\RequirePackage{fixltx2e}			% fix latex
-\RequirePackage[utf8]{inputenc}		% inputencryption
-\RequirePackage[T1]{fontenc}		% fontencryption
-\RequirePackage[ngerman]{babel}		% language package
-\RequirePackage[numbers]{natbib}	% bibliography
+\RequirePackage{fixltx2e}           % fix latex
+\RequirePackage[utf8]{inputenc}     % inputencryption
+\RequirePackage[T1]{fontenc}        % fontencryption
+\RequirePackage[ngerman]{babel}     % language package
+\RequirePackage[numbers]{natbib}    % bibliography
 
-\RequirePackage{amsmath}			% math symbols etc
-\RequirePackage{amssymb}			% math symbols
+\RequirePackage{amsmath}            % math symbols etc
+\RequirePackage{amssymb}            % math symbols
 
-\RequirePackage{geometry}			% page margins
-\RequirePackage{makeidx}			% index generation
-\RequirePackage[intoc]{nomencl}		% nomenclature settings
+\RequirePackage{geometry}           % page margins
+\RequirePackage{makeidx}            % index generation
+\RequirePackage[intoc]{nomencl}     % nomenclature settings
 
-\RequirePackage{setspace}			% Linespacing
-\RequirePackage{float}				% floating objects
-\RequirePackage{caption}			% caption inside multifloat
-\RequirePackage{graphicx}			% image support (float)
+\RequirePackage{setspace}           % Linespacing
+\RequirePackage{float}              % floating objects
+\RequirePackage{caption}            % caption inside multifloat
+\RequirePackage{graphicx}           % image support (float)
 
-\RequirePackage{listings}			% display sourcecode
+\RequirePackage{listings}           % display sourcecode
 
-\RequirePackage{multicol}			% paragraph columns
-\RequirePackage{lipsum}				% generate lipsum
-\RequirePackage{cclicenses}			% CC-Icons
+\RequirePackage{multicol}           % paragraph columns
+\RequirePackage{lipsum}             % generate lipsum
+\RequirePackage{cclicenses}         % CC-Icons
 
-\RequirePackage{xcolor}				% use colors
+\RequirePackage{xcolor}             % use colors
 
 \RequirePackage{algorithm}
 \RequirePackage{algpseudocode}
 
-\RequirePackage{lmodern}			% something about font etc...
-\RequirePackage{libertine}			% use Libertine fontset
-\RequirePackage{eurosym}			% official EUR-Symbol
+\RequirePackage{lmodern}            % something about font etc...
+\RequirePackage{libertine}          % use Libertine fontset
+\RequirePackage{eurosym}            % official EUR-Symbol
 \RequirePackage{titling}
 %\RequirePackage{indentfirst}
 
-\RequirePackage{hyperref}			% PDF settings
+\RequirePackage{hyperref}           % PDF settings
 
 %
 % CONFIG
@@ -67,23 +67,23 @@
 
 
 \geometry{
-	inner=3cm,
-	outer=3cm,
-	top=3cm,
-	bottom=3cm
+    inner=3cm,
+    outer=3cm,
+    top=3cm,
+    bottom=3cm
 }
 
 \hypersetup{
-	unicode=true, 
-	bookmarks=true, 
-	bookmarksnumbered=false, 
-	bookmarksopen=false, 
-	breaklinks=false, 
-	pdfborder={0 0 0},	
-	backref=false, 
-	colorlinks=false, 
-	pdftitle={Thomas\ Jonitz}, 
-	pdfauthor={t.j.}
+    unicode=true, 
+    bookmarks=true, 
+    bookmarksnumbered=false, 
+    bookmarksopen=false, 
+    breaklinks=false, 
+    pdfborder={0 0 0},  
+    backref=false, 
+    colorlinks=false, 
+    pdftitle={Thomas\ Jonitz}, 
+    pdfauthor={t.j.}
 }
 
 \definecolor{lgray}{rgb}{0.95,0.95,0.95}
@@ -91,24 +91,24 @@
 \definecolor{dblue}{rgb}{0.0,0.0,0.3}
 
 \lstset{
-	backgroundcolor={\color{lgray}},   
-	breakatwhitespace=false,
-	showspaces=false,
-	showstringspaces=false, 
-	basicstyle={\footnotesize\ttfamily\color{black}},                          
-	commentstyle={\footnotesize\ttfamily\color{darkgray}},                              
-	keywordstyle={\footnotesize\ttfamily\color{dblue}},       
-	numberstyle={\footnotesize\ttfamily\color{black}},       
-	stringstyle={\footnotesize\ttfamily\color{dgreen}},  
-	title={Src: \lstname},                  
-	breaklines={true}, 
-	captionpos={b}, 
-	frame={l},
-	numbers=left,       
-  	stepnumber=1,                   
-  	numbersep=10pt,
-  	tabsize=2,
-  	xleftmargin=2em
+    backgroundcolor={\color{lgray}},   
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false, 
+    basicstyle={\footnotesize\ttfamily\color{black}},                          
+    commentstyle={\footnotesize\ttfamily\color{darkgray}},                              
+    keywordstyle={\footnotesize\ttfamily\color{dblue}},       
+    numberstyle={\footnotesize\ttfamily\color{black}},       
+    stringstyle={\footnotesize\ttfamily\color{dgreen}},  
+    title={Src: \lstname},                  
+    breaklines={true}, 
+    captionpos={b}, 
+    frame={l},
+    numbers=left,       
+    stepnumber=1,                   
+    numbersep=10pt,
+    tabsize=2,
+    xleftmargin=2em
 }
 
 \newcounter{RomanPages} 
@@ -122,35 +122,35 @@
 \providecommand{\Item}[2]{\item{\textbf{#1:~}#2}}
 
 \providecommand{\Image}[5][0.9]{
-	\begin{figure}[tbp]	
-	\begin{center}
-	\includegraphics[width=#1\textwidth]{#2}
-	\caption{#3}
-	\small{#4}
-	\label{#5}
-	\end{center}
-	\end{figure}
+    \begin{figure}[tbp] 
+    \begin{center}
+    \includegraphics[width=#1\textwidth]{#2}
+    \caption{#3}
+    \small{#4}
+    \label{#5}
+    \end{center}
+    \end{figure}
 }
 
 \providecommand{\FrontMatter}{
-	\clearpage
-	\singlespacing
-	\pagenumbering{roman}
-	\setcounter{RomanPages}{1} 
+    \clearpage
+    \singlespacing
+    \pagenumbering{roman}
+    \setcounter{RomanPages}{1} 
 }
 
 \providecommand{\MainMatter}{
-	\setcounter{RomanPages}{\value{page}}
-	\clearpage
-	\onehalfspacing
-	\pagenumbering{arabic}
+    \setcounter{RomanPages}{\value{page}}
+    \clearpage
+    \onehalfspacing
+    \pagenumbering{arabic}
 }
 
 \providecommand{\BackMatter}{
-	\clearpage
-	\singlespacing
-	\pagenumbering{roman}
-	\setcounter{page}{\value{RomanPages}+1}
+    \clearpage
+    \singlespacing
+    \pagenumbering{roman}
+    \setcounter{page}{\value{RomanPages}+1}
 }
 
 \algrenewtext{Function}[2]{\algorithmicfunction\ \texttt{#1}( #2 ):}

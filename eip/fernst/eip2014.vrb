@@ -1,0 +1,18 @@
+\frametitle {Quadratische Gleichung}\begin {block}{Algorithmus 2}
+        \begin{algorithm}[H]
+        %\caption{Algorithmus 2}
+        \label{alg:2}
+        \begin{algorithmic}
+            \Function{QuadratischeGleichung}{$p, q\in\mathbb{R}$}
+                \State $a\gets \frac{p}{2}$
+                \State $b\gets a^2$
+                \State $c\gets b - q$
+                \State $d\gets \sqrt{c}$
+                \State $e\gets -a$
+                \State $x_{1}\gets e+d$
+                \State $x_{2}\gets e-d$
+                \State \Return $\{ x_{1}, x_{2}\}$
+            \EndFunction
+        \end{algorithmic}
+        \end{algorithm}
+    \end{block}

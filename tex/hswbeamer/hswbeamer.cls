@@ -86,15 +86,6 @@
 \definecolor{dgreen}{rgb}{0.0,0.3,0.0}
 \definecolor{dblue}{rgb}{0.0,0.0,0.3}
 \definecolor{wings}{RGB}{0,50,95}
-\definecolor{fiw}{RGB}{0, 177, 219}
-\definecolor{fww}{RGB}{51, 153, 51}
-\definecolor{fg}{RGB}{255, 93, 2}
-\definecolor{all}{RGB}{47, 50, 41}
-\definecolor{silver}{RGB}{175, 175, 175}
-\definecolor{lsilver}{RGB}{240, 240, 240}
-\definecolor{wings}{RGB}{0,50,95}
-\definecolor{dgreen}{rgb}{0.0,0.3,0.0}
-\definecolor{dblue}{rgb}{0.0,0.0,0.3}
 
 \lstset{
 	backgroundcolor={\color{lgray}},   
@@ -153,11 +144,9 @@
 
 
 \institute[HS Wismar]{Hochschule Wismar -- University of Applied Sciences: Technology, Business and Design\\Fakult\"{a}t f\"{u}r Wirtschaftswissenschaften}
-%\titlegraphic{\includegraphics[scale=0.05]{hsw-wings.jpg}}
-
-\beamertemplatenavigationsymbolsempty
+\titlegraphic{\includegraphics[scale=0.1]{hsw-wings.jpg}}
 
 \addtobeamertemplate{frametitle}{}{%
 \begin{tikzpicture}[remember picture,overlay]
-\node[anchor=north east,yshift=-15pt,xshift=-15pt] at (current page.north east) {\includegraphics[scale=0.1]{img/fischer-wings.png}};
+\node[anchor=north east,yshift=-15pt,xshift=-15pt] at (current page.north east) {\includegraphics[scale=0.01]{fischer-wings.png}};
 \end{tikzpicture}}

@@ -1,0 +1,73 @@
+\documentclass[a4paper, 10pt]{article}
+
+\RequirePackage{fixltx2e}           % fix latex
+\RequirePackage[utf8]{inputenc}     % inputencryption
+\RequirePackage[T1]{fontenc}        % fontencryption
+\RequirePackage[ngerman]{babel}     % language package
+\RequirePackage{listings}
+\RequirePackage{geometry}
+\RequirePackage{multicol}
+\RequirePackage{lipsum}
+\RequirePackage{makeidx}            % index generation
+\RequirePackage{nomencl}     % nomenclature settings
+
+\geometry{
+    inner=1cm,
+    outer=1cm,
+    top=1cm,
+    bottom=1cm
+}
+\lstset{ 
+    breakatwhitespace=false,
+    showspaces=false,
+    showstringspaces=false, 
+    basicstyle={\footnotesize\ttfamily},                          
+    commentstyle={\footnotesize\ttfamily},                              
+    keywordstyle={\footnotesize\ttfamily},       
+    numberstyle={\footnotesize\ttfamily},       
+    stringstyle={\footnotesize\ttfamily},  
+    title={Src: \lstname},                  
+    breaklines={true}, 
+    captionpos={b},
+    frame={l},
+    numbers=left,       
+    stepnumber=1,                   
+    numbersep=10pt,
+    tabsize=2,
+    xleftmargin=2em
+}
+
+\renewcommand{\nomname}{Nomenklatur}
+\setlength{\nomlabelwidth}{.25\hsize}
+\renewcommand{\nomlabel}[1]{#1 \dotfill}
+\setlength{\nomitemsep}{-\parsep}
+%\setlength{\parskip}{2.5pt}
+\providecommand{\printnomenclature}{\printglossary}
+\providecommand{\makenomenclature}{\makeglossary}
+
+\title{Beispiel-Lösungen\\Verteilte-Informationssysteme\\Middleware-Technologien für eBusiness-Anwendungen}
+
+\makeindex
+\makenomenclature
+
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+\input{nomenclature}
+\end{multicols}
+
+\section*{Artikel Eintragen und Nachbestellen}
+    \lstinputlisting[language=Java, caption=Lagerartikel.java]{t2-ss12/Lagerartikel.java}
+    \lstinputlisting[language=Java, caption=ArtikelVerwaltungInterface.java]{t2-ss12/ArtikelVerwaltungInterface.java}
+    \lstinputlisting[language=Java, caption=ArtikelVerwaltungImpl.java]{t2-ss12/ArtikelVerwaltungImpl.java}
+    \lstinputlisting[language=Java, caption=WebClient.html]{t2-ss12/WebClient.html}
+    \lstinputlisting[language=Java, caption=WebClient.jsp]{t2-ss12/WebClient.jsp}
+
+\section*{Straftaten verwalten und Tatorte suchen}
+    \lstinputlisting[language=Java, caption=Straftat.java]{t2-ss11/Straftat.java}
+    \lstinputlisting[language=Java, caption=StraftatenVerwaltungInterface.java]{t2-ss11/StraftatenVerwaltungInterface.java}
+    \lstinputlisting[language=Java, caption=StraftatenVerwaltungImpl.java]{t2-ss11/StraftatenVerwaltungImpl.java}
+    \lstinputlisting[language=Java, caption=client.html]{t2-ss11/client.html}
+    \lstinputlisting[language=Java, caption=client.jsp]{t2-ss11/client.jsp}
+\end{document}
