@@ -8,7 +8,7 @@
 \titlegraphic{\includegraphics[scale=0.05]{img/hsw-wings.jpg}}
 
 \bibliography{literatur}
-\makeindex
+
 \begin{document}
 
 

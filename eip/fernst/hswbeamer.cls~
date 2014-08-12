@@ -44,7 +44,7 @@
 
 \RequirePackage{geometry}
 \RequirePackage{hyperref}
-\RequirePackage{xkeyval}
+
 
 \setbeamertemplate{section in head/foot}{\hfill\insertsectionheadnumber.~\insertsectionhead}
 \setbeamertemplate{section in head/foot shaded}{\color{structure!50}\hfill\insertsectionheadnumber.~\insertsectionhead}
