@@ -1,7 +1,7 @@
 /**
  * @file ackermann.c Implements an ackermann function
  * @author t.j.
- * @version 2013-06-26
+ * @version 2014-10-12
  *
  * This program implements an Ackermann function that shows
  * a fast growth of needed runtime.
@@ -22,7 +22,7 @@
  *      buffer overflow (mainly the global iterator).
  *
  *      This file is also located in the 'hsw' repository.
- *              $ git clone http://code.google.com/p/xladde.hsw 
+ *              $ git clone http://code.google.com/p/xladde.hsw
  *
  * For more information about the Ackermann function:
  *      http://en.wikipedia.org/wiki/Ackermann_function
@@ -47,9 +47,9 @@ unsigned iteration;
 unsigned ackermann( unsigned m, unsigned n )
 {
     ++iteration;
-    if( m==0 ) 
+    if( m==0 )
         { return n+1; }
-    else if( n==0 ) 
+    else if( n==0 )
         { return ackermann(m-1, 1); }
     else
         { return ackermann( m-1, ackermann(m, n-1) ); }
@@ -60,49 +60,49 @@ unsigned ackermann( unsigned m, unsigned n )
  */
 int main( int argc, char *argv[] )
 {
-    unsigned a, 
-             b, 
-             m, 
-             n, 
+    unsigned a,
+             b,
+             m,
+             n,
              result;
     float    runtime;
-    clock_t  start, 
+    clock_t  start,
              stop;
-        
+
     iteration = 0;
-    
-    // preparing values    
+
+    // preparing values
     if( argc == 3 )
     {
-            m = (unsigned)atoi( argv[1] );
-            n = (unsigned)atoi( argv[2] );
+        m = (unsigned)atoi( argv[1] )+1;
+        n = (unsigned)atoi( argv[2] )+1;
     } else
     {
         m = (unsigned)MAX_M;
-            n = (unsigned)MAX_N;
+        n = (unsigned)MAX_N;
     }
-    
+
     // some output
     system( "clear" );
     printf( "Running Ackermann." );
     printf( "This may take some time or causes a buffer overflow\n" );
-    
-    // here starts the action    
+
+    // here starts the action
     for( a=0; a<m; a++ )
     {
         for( b=0; b<n; b++ )
         {
             start   = clock();  // start timer
             result  = ackermann( a, b );
-            stop    = clock();  // stop timer                    
+            stop    = clock();  // stop timer
             runtime = (float)(stop-start)/(float)(CLOCKS_PER_SEC);
-                        
-            printf( "(%u,%u)\t= %u\ttime: %.2f sec\titerations: %d\n", 
+
+            printf( "(%u,%u)\t= %u\ttime: %.2f sec\titerations: %d\n",
                     a, b, result, runtime, iteration );
-                        
+
             iteration = 0;
         } // end inner for
     } // end outer for
     return EXIT_SUCCESS;
 } // end main fnc
- 
+

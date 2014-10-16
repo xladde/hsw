@@ -1,0 +1,2 @@
+<scope> <rtype> <name> ([<par1>, <par2>, ...])
+public int addiere(int a, int b)

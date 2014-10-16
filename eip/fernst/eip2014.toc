@@ -6,18 +6,18 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {1}{Einf\IeC {\"u}hrung}{4}{0}{1}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {2}{Klassendefinition und Objekte}{18}{0}{2}
+\beamer@sectionintoc {2}{Klassendefinition und Objekte}{21}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Anweisungen und Datentypen}{19}{0}{3}
+\beamer@sectionintoc {3}{Anweisungen und Datentypen}{22}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Datensammlungen}{20}{0}{4}
+\beamer@sectionintoc {4}{Datensammlungen}{23}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Container-Klassen}{21}{0}{5}
+\beamer@sectionintoc {5}{Container-Klassen}{24}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Algorithmen}{22}{0}{6}
+\beamer@sectionintoc {6}{Algorithmen}{25}{0}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{Vererbung}{23}{0}{7}
+\beamer@sectionintoc {7}{Vererbung}{26}{0}{7}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {8}{Statische Methoden}{24}{0}{8}
+\beamer@sectionintoc {8}{Statische Methoden}{27}{0}{8}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {9}{Zusammenfassung}{25}{0}{9}
+\beamer@sectionintoc {9}{Zusammenfassung}{28}{0}{9}

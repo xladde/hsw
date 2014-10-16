@@ -1,5 +1,8 @@
 \section{Einführung}\label{sec:0-einfuehrung}
-\begin{frame}{Einführung}
+\begin{frame}{}
+\begin{center}
+\Huge Einführung
+\end{center}
 \end{frame}
 
 %\subsection{Ablauf der Präsenzveranstaltung}
@@ -13,7 +16,7 @@
     \end{block}
     \begin{block}{Problem}
         \Quote{When I wrote the software only God and I knew how it worked. Now a year later only God knows how it works} --- \emph{unbekannt}
-    \end{block}    
+    \end{block}
 \end{frame}
 
 %\subsection{Literaturempfhelungen}
@@ -59,7 +62,7 @@
                 Quadratische Gleichung: $x^2 + 8x + 7 = 0$
             \end{block}
         \end{column}
-    \end{columns}    
+    \end{columns}
 \end{frame}
 
 %\subsection{Quadratische Gleichung}
@@ -135,12 +138,46 @@
     \end{block}
 
     \begin{block}{grundlegende Konzepte}
-        Objekt, Klasse, Merkmal (Attribut), Methode, Parameter, Datentyp 
+        Objekt, Klasse, Merkmal (Attribut), Methode, Parameter, Datentyp
     \end{block}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Objekte und Klassen}
+    \begin{block}{Ein Objekt \ldots}
+    \ldots\ repräsentiert \Quote{Dinge} aus der realen Welt, oder aus dem Problembereich.
+    \end{block}
+
+    \begin{block}{Eine Klasse \ldots}
+    \ldots\ repräsentiert alle Objekte einer Bauart oder eines Typs.
+    \end{block}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}[shrink]{Beispiel: Die Klasse Student}
+    \lstinputlisting[language=Java, caption="Student.java"]{src/Student.java}
+\end{frame}
+
+\begin{frame}{Methoden und Parameter}
+    \begin{itemize}
+    \item Objekte bezitzen Operationen (in Java: \Quote{Methoden})
+    \item mittels Methoden werden Objekte bearbeitet
+    \item Methoden können Parameter benötigen
+    \item Methoden können Ergebnisse liefern
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Methoden und Parameter}
+    \begin{block}{Methodenkopf (Signatur)}
+    \lstinputlisting{src/signatur.txt}
+    \end{block}
+    \begin{block}{Methodenrumpf}
+    \lstinputlisting{src/signatur-ex.txt}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Beobachtungen}
+    \begin{itemize}
+    \item mehre Instanzen/Objekte  einer Klasse möglich
+    \item Objekt hat Attribute/Merkmale: Werte werden in Instanzen-Variablen gespeichert
+    \item Klasse definiert die Instanzen-Variablen ABER: jedes Objekt speichert seine eigene Menge von Werten (Zustand des Objekts)
+    \end{itemize}
 \end{frame}
