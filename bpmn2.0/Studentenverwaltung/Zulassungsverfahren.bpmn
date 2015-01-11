@@ -167,6 +167,7 @@
       <bpmn2:incoming>SequenceFlow_44</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_55</bpmn2:incoming>
       <bpmn2:outgoing>SequenceFlow_47</bpmn2:outgoing>
+      <bpmn2:outgoing>SequenceFlow_57</bpmn2:outgoing>
     </bpmn2:eventBasedGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_42" name="" sourceRef="IntermediateCatchEvent_6" targetRef="EventBasedGateway_1"/>
     <bpmn2:sequenceFlow id="SequenceFlow_44" name="" sourceRef="IntermediateCatchEvent_3" targetRef="EventBasedGateway_1"/>
@@ -212,11 +213,20 @@
     <bpmn2:parallelGateway id="ParallelGateway_6">
       <bpmn2:incoming>SequenceFlow_50</bpmn2:incoming>
       <bpmn2:incoming>SequenceFlow_51</bpmn2:incoming>
+      <bpmn2:outgoing>SequenceFlow_58</bpmn2:outgoing>
     </bpmn2:parallelGateway>
     <bpmn2:sequenceFlow id="SequenceFlow_50" name="" sourceRef="Task_15" targetRef="ParallelGateway_6"/>
     <bpmn2:sequenceFlow id="SequenceFlow_51" name="" sourceRef="Task_16" targetRef="ParallelGateway_6"/>
     <bpmn2:sequenceFlow id="SequenceFlow_54" name="" sourceRef="ParallelGateway_2" targetRef="IntermediateCatchEvent_4"/>
     <bpmn2:sequenceFlow id="SequenceFlow_55" name="" sourceRef="IntermediateCatchEvent_4" targetRef="EventBasedGateway_1"/>
+    <bpmn2:task id="Task_18" name="Mahnverfahren">
+      <bpmn2:incoming>SequenceFlow_57</bpmn2:incoming>
+    </bpmn2:task>
+    <bpmn2:sequenceFlow id="SequenceFlow_57" name="Rechnung nicht&#xA;gezahlt" sourceRef="EventBasedGateway_1" targetRef="Task_18"/>
+    <bpmn2:endEvent id="EndEvent_3">
+      <bpmn2:incoming>SequenceFlow_58</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:sequenceFlow id="SequenceFlow_58" name="" sourceRef="ParallelGateway_6" targetRef="EndEvent_3"/>
     <bpmn2:textAnnotation id="TextAnnotation_1">
       <bpmn2:text>Aus Datenschutzgründen werden nur Daten erfasst, die zur Kontaktaufnahme vor Vertragsabschluss dienen.</bpmn2:text>
     </bpmn2:textAnnotation>
@@ -497,9 +507,9 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_IntermediateCatchEvent_12" bpmnElement="IntermediateCatchEvent_6">
-        <dc:Bounds height="36.0" width="36.0" x="1380.0" y="462.0"/>
+        <dc:Bounds height="36.0" width="36.0" x="1380.0" y="504.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="0.0" width="0.0" x="1398.0" y="503.0"/>
+          <dc:Bounds height="0.0" width="0.0" x="1398.0" y="545.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_Task_33" bpmnElement="Task_12">
@@ -547,7 +557,10 @@
         <di:waypoint xsi:type="dc:Point" x="1316.0" y="276.0"/>
         <di:waypoint xsi:type="dc:Point" x="1316.0" y="369.0"/>
         <di:waypoint xsi:type="dc:Point" x="1398.0" y="369.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1398.0" y="462.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1398.0" y="504.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="6.0" width="6.0" x="1354.0" y="369.0"/>
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="_BPMNShape_EventBasedGateway_2" bpmnElement="EventBasedGateway_1">
         <dc:Bounds height="50.0" width="50.0" x="1452.0" y="595.0"/>
@@ -556,11 +569,11 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_42" bpmnElement="SequenceFlow_42" sourceElement="_BPMNShape_IntermediateCatchEvent_12" targetElement="_BPMNShape_EventBasedGateway_2">
-        <di:waypoint xsi:type="dc:Point" x="1398.0" y="498.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1396.0" y="618.0"/>
-        <di:waypoint xsi:type="dc:Point" x="1452.0" y="619.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1416.0" y="522.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1476.0" y="522.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1477.0" y="595.0"/>
         <bpmndi:BPMNLabel>
-          <dc:Bounds height="6.0" width="6.0" x="1395.0" y="516.0"/>
+          <dc:Bounds height="6.0" width="6.0" x="1431.0" y="522.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_44" bpmnElement="SequenceFlow_44" sourceElement="_BPMNShape_IntermediateCatchEvent_9" targetElement="_BPMNShape_EventBasedGateway_2">
@@ -699,6 +712,23 @@
         <di:waypoint xsi:type="dc:Point" x="1478.0" y="697.0"/>
         <di:waypoint xsi:type="dc:Point" x="1477.0" y="697.0"/>
         <di:waypoint xsi:type="dc:Point" x="1477.0" y="645.0"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_Task_39" bpmnElement="Task_18">
+        <dc:Bounds height="80.0" width="100.0" x="1260.0" y="580.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_57" bpmnElement="SequenceFlow_57" sourceElement="_BPMNShape_EventBasedGateway_2" targetElement="_BPMNShape_Task_39">
+        <di:waypoint xsi:type="dc:Point" x="1452.0" y="620.0"/>
+        <di:waypoint xsi:type="dc:Point" x="1360.0" y="620.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="38.0" width="97.0" x="1365.0" y="622.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_EndEvent_4" bpmnElement="EndEvent_3">
+        <dc:Bounds height="36.0" width="36.0" x="2216.0" y="602.0"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="BPMNEdge_SequenceFlow_58" bpmnElement="SequenceFlow_58" sourceElement="_BPMNShape_ParallelGateway_11" targetElement="_BPMNShape_EndEvent_4">
+        <di:waypoint xsi:type="dc:Point" x="2166.0" y="620.0"/>
+        <di:waypoint xsi:type="dc:Point" x="2216.0" y="620.0"/>
       </bpmndi:BPMNEdge>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
