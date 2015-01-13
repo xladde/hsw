@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=kz\ typ\ tonnage
+comment0.target=LKW(int,\ java.lang.String,\ int)
+comment1.params=
+comment1.target=java.lang.String\ toString()
+numComments=2

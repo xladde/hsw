@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.params=links\ zahl\ rechts
+comment0.target=Baum(Baum,\ int,\ Baum)
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Baum\r\n
+comment1.params=zahl
+comment1.target=Baum(int)
+comment2.params=
+comment2.target=Baum\ getLinks()
+comment3.params=
+comment3.target=Baum\ getRechts()
+comment4.params=
+comment4.target=int\ getInhalt()
+comment5.params=neu
+comment5.target=void\ setLinks(Baum)
+comment6.params=neu
+comment6.target=void\ setRechts(Baum)
+comment7.params=zahl
+comment7.target=void\ setInhalt(int)
+comment8.params=
+comment8.target=int\ anzahlKnoten()
+comment9.params=
+comment9.target=int\ blaetter()
+numComments=10

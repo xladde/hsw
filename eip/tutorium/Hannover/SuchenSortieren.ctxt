@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=f\ anf\ ende
+comment0.target=java.lang.String[]\ bubbleSort(java.lang.String[],\ int,\ int)
+comment1.params=f\ anf\ ende
+comment1.target=java.lang.String[]\ selectSort(java.lang.String[],\ int,\ int)
+comment2.params=f\ anf\ ende
+comment2.target=void\ ausgabe(java.lang.String[],\ int,\ int)
+comment3.params=f
+comment3.target=java.lang.String[]\ selectSort(java.lang.String[])
+comment4.params=args
+comment4.target=void\ main(java.lang.String[])
+numComments=5

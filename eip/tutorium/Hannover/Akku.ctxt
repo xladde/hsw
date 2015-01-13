@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=nummer\ kapazitaet
+comment0.target=Akku(int,\ int)
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Akku\r\n
+comment1.params=
+comment1.target=int\ getLadestand()
+comment2.params=
+comment2.target=int\ getNummer()
+comment3.params=
+comment3.target=int\ getKapazitaet()
+comment4.params=neu
+comment4.target=void\ setNummer(int)
+comment5.params=std
+comment5.target=void\ akkuLaden(int)
+comment6.params=std
+comment6.target=void\ akkuNutzen(int)
+comment7.params=
+comment7.target=void\ ausgabe()
+numComments=8

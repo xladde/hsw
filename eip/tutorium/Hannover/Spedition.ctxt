@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Spedition()
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Spedition\r\n
+comment1.params=neu
+comment1.target=void\ hinzu(Fahrzeug)
+comment2.params=
+comment2.target=int\ anzahl()
+comment3.params=kennzeichen
+comment3.target=int\ suche(int)
+numComments=4

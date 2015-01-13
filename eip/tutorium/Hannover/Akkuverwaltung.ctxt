@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Akkuverwaltung()
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Akkuverwaltung\r\n
+comment1.params=
+comment1.target=int\ getAnzahl()
+comment2.params=neu
+comment2.target=void\ hinzu(Akku)
+comment3.params=i
+comment3.target=Akku\ getAkku(int)
+comment4.params=
+comment4.target=void\ ausgabe()
+numComments=5

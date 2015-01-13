@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=kz\ typ\ anz
+comment0.target=Bus(int,\ java.lang.String,\ int)
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Bus\r\n
+comment1.params=
+comment1.target=java.lang.String\ toString()
+numComments=2

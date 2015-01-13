@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=kz\ typ
+comment0.target=Fahrzeug(int,\ java.lang.String)
+comment0.text=\r\n\ Konstruktor\ f\u00FCr\ Objekte\ der\ Klasse\ Fahrzeug\r\n
+comment1.params=
+comment1.target=int\ getKennzeichen()
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
