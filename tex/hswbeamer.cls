@@ -2,8 +2,8 @@
 \mode<presentation>
 \usetheme{default}
 %\usetheme[height=25mm]{Rochester}
-\usecolortheme[RGB={0,50,95}]{structure} 
-\useoutertheme{infolines} 
+\usecolortheme[RGB={0,50,95}]{structure}
+\useoutertheme{infolines}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{hswbeamer}[2013/08/20 Custom class for Presentatins]
@@ -97,21 +97,21 @@
 \definecolor{dblue}{rgb}{0.0,0.0,0.3}
 
 \lstset{
-	backgroundcolor={\color{lgray}},   
+	backgroundcolor={\color{lgray}},
 	breakatwhitespace=false,
 	showspaces=false,
-	showstringspaces=false, 
-	basicstyle={\footnotesize\ttfamily\color{black}},                          
-	commentstyle={\footnotesize\ttfamily\color{darkgray}},                              
-	keywordstyle={\footnotesize\ttfamily\color{dblue}},       
-	numberstyle={\footnotesize\ttfamily\color{black}},       
-	stringstyle={\footnotesize\ttfamily\color{dgreen}},  
-	title={Src: \lstname},                  
-	breaklines={true}, 
-	captionpos={b}, 
+	showstringspaces=false,
+	basicstyle={\footnotesize\ttfamily\color{black}},
+	commentstyle={\footnotesize\ttfamily\color{darkgray}},
+	keywordstyle={\footnotesize\ttfamily\color{dblue}},
+	numberstyle={\footnotesize\ttfamily\color{black}},
+	stringstyle={\footnotesize\ttfamily\color{dgreen}},
+	title={Src: \lstname},
+	breaklines={true},
+	captionpos={b},
 	frame={l},
-	numbers=left,       
-  	stepnumber=1,                   
+	numbers=left,
+  	stepnumber=1,
   	numbersep=10pt,
   	tabsize=2,
   	xleftmargin=2em
@@ -126,7 +126,7 @@
 \providecommand{\Item}[2]{\item{\textbf{#1:~}#2}}
 
 \providecommand{\Image}[5][0.9]{
-	\begin{figure}[tbp]	
+	\begin{figure}[tbp]
 	\begin{center}
 	\includegraphics[width=#1\textwidth]{#2}
 	\caption{#3}
@@ -149,6 +149,8 @@
 \providecommand{\Euro}[1]{\EUR{#1}}
 \providecommand{\Celsius}[1]{$#1\;^\circ\text{C}$}
 \providecommand{\Ohm}[1]{$#1\;\Omega$}
+\providecommand{\Uhr}[2]{$#1\;^\text{#2}$}
+
 
 
 

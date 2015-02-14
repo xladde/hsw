@@ -1,0 +1,20 @@
+\frametitle{Tagesplanung}
+\begin{block}{Agenda für den Tag}
+        \begin{enumerate}
+        \item Vorstellungsrunde
+        \item Bauplan-Klassen
+        \item Arrays und ArrayLists (\texttt{int}, \texttt{Telefon} oder \texttt{Akku})
+        \item Keller (\texttt{Stack})/Schlange (\texttt{Queue})
+        \item Rekursion (Binär-Baum)
+        \item Such- und Sortieralgorithmen
+        \item Vererbung (Bsp.: Kalender)
+        \item Prüfung und Evaluierung
+        \end{enumerate}
+    \end{block}
+    \begin{block}{Vorschlag:}
+        \begin{description}
+        \item[\Uhr{10}{30}--\Uhr{10}{45}] Frühstückspause
+        \item[\Uhr{12}{15}--\Uhr{13}{15}] Mittagspause
+        \item[\Uhr{15}{40}--\Uhr{15}{55}] Erfrischung und Vorbereitung
+        \end{description}
+    \end{block}
