@@ -1,24 +1,27 @@
 import java.io.*;
 /**
- *   Methoden für die zeilenweise Ein- und Ausgabe im CMD-Fenster
- *   Die Klasse basiert auf einer Arbeit von Otto Rauh: IntIO
- * @author Uwe Lämmel nach einer Idee von Otto Rauh
- * @version 5.10.2011
+ * Methoden fuer die zeilenweise Ein- und Ausgabe im CMD-Fenster
+ * Die Klasse basiert auf einer Arbeit von Otto Rauh: IntIO
  *
  * -- Uwe Laemmel - Aenderungsprotokoll -------------------------
- * 20.01.11  Umbennenung in LineIO um Verwechslung Int ~ Integer zu vermeiden
- *           Methoden der 2. Auflage endgültig entfernt
- * 11.11.07  write/3: Fehler bei Ausgabe von sehr kleinen Werten behoben
- * 25.11.03  readChar liefert bei Eingabe von <return> ein Leerzeichen
- * 25.10.02  Ersetzen von write(double,int,int):
- *         - Beseitigung fehlerhafter Rundung (führte vorher zu ':')
- *         - Zahlen>10^7 bzw. <10^-3 werden nun als Gleitkomma-Zahl
+ * <ul>
+ * <li>20.01.11  Umbennenung in LineIO um Verwechslung Int ~ Integer zu vermeiden
+ *           Methoden der 2. Auflage endgueltig entfernt
+ * <li>11.11.07  write/3: Fehler bei Ausgabe von sehr kleinen Werten behoben
+ * <li>25.11.03  readChar liefert bei Eingabe von [Enter] ein Leerzeichen
+ * <li>25.10.02  Ersetzen von write(double,int,int):
+ *         - Beseitigung fehlerhafter Rundung (fuehrte vorher zu ':')
+ *         - Zahlen&gt;10^7 bzw. &lt;10^-3 werden nun als Gleitkomma-Zahl
  *           aber korrekt ausgegeben
- * 08.10.02  Aufnahme der neuen Bezeichnungen aus Auflage 3:
+ * <li>08.10.02  Aufnahme der neuen Bezeichnungen aus Auflage 3:
  *          readTYPE statt promptAndReadTYPE TYPE= Int; Double; String
- * 04.09.02  Hinzufügen von write/writeln für char, boolean, Object
- *          write(Object o) führt zu Vereinfachungen in write/3
- * 04.09.02  Umformatierungen -> kompaktere Darstellung
+ * <li>04.09.02  Hinzufuegen von write und writeln fuer char, boolean, Object
+ *          write(Object o) fuehrt zu Vereinfachungen in write/3
+ * <li>04.09.02  Umformatierungen fuehrt zu kompakterer Darstellung
+ * <li>
+ * </ul>
+ * @author Uwe Laemmel nach einer Idee von Otto Rauh
+ * @version 25.11.2022
  */
 
 
@@ -124,12 +127,12 @@ public class LineIO {
 
   /**
    * Ausgabe einer ganzen Zahl ohne Zeilenvorschub:
-   * schreibt die ganzez Zahl integer rechtsbündig in insgesamt 'anzahl'
+   * <br>schreibt die ganzez Zahl integer rechtsbuendig in insgesamt 'anzahl'
    * viele Positionen(Zeichen/Spalten)
-   * Es werden mehr Positionen verbraucht, wenn das angegebene Format
+   * <br>Es werden mehr Positionen verbraucht, wenn das angegebene Format
    * nicht reicht, die Zahl zu fassen
    * @param integer  ganze Zahl, die ausgegeben wird
-   * @param anzahl  Anzahl der Spalten, die für die Ausgabe benutzt werden
+   * @param anzahl  Anzahl der Spalten, die fuer die Ausgabe benutzt werden
    */
   public void write(int integer, int anzahl)
   {    String s = "" + integer;
@@ -137,7 +140,7 @@ public class LineIO {
     else
       if (s.length() < anzahl) {
         for (int j=1;j<=(anzahl-s.length());j++)  // vorne
-          write(" ");                              // auffüllen
+          write(" ");                              // auffuellen
         write(integer);
       }
       else write(integer);       // zu lange Zahl wird nicht beschnitten
@@ -146,12 +149,12 @@ public class LineIO {
 
   /**
    * Ausgabe einer ganzen Zahl MIT Zeilenvorschub:
-   * schreibt die ganzez Zahl integer rechtsbündig in insgesamt 'anzahl'
+   * schreibt die ganzez Zahl integer rechtsbuendig in insgesamt 'anzahl'
    * viele Positionen(Zeichen/Spalten)
-   * Es werden mehr Positionen verbraucht, wenn das angegebene Format
+   * <p>Es werden mehr Positionen verbraucht, wenn das angegebene Format
    * nicht reicht, die Zahl zu fassen
    * @param integer  ganze Zahl, die ausgegeben wird
-   * @param anzahl  Anzahl der Spalten, die für die Ausgabe benutzt werden
+   * @param anzahl  Anzahl der Spalten, die fuer die Ausgabe benutzt werden
    */
   public void writeln(int integer, int anzahl){
     write(integer, anzahl);
@@ -160,20 +163,20 @@ public class LineIO {
   
   /**
    * Ausgabe einer Festkommazahl ohne Zeilenvorschub:
-   * schreibt die Kommazahl value rechtsbündig in insgesamt noChar viele
+   * schreibt die Kommazahl value rechtsbuendig in insgesamt noChar viele
    * Spalten (Zeichen/Positionen) mit noFrac Nachkommastellen;
    * verbraucht mehr Spalten, falls die angegebene Zahl der Zeichen
    * nicht ausreicht, die Zahl zu fassen
-   * Zur Beschraenkung von write/3 siehe API toString/1 der Klasse Double
+   * <p>Zur Beschraenkung von write/3 siehe API toString/1 der Klasse Double
    * @param value  ganze Zahl, die ausgegeben wird
-   * @param noChar   Anzahl der Spalten, die für die Ausgabe benutzt werden
+   * @param noChar   Anzahl der Spalten, die fuer die Ausgabe benutzt werden
    * @param noFrac   Anzahl der Ziffern nach dem Komma
    */
     public void write(double value, int noChar, int noFrac) {
       boolean low=false; // Zahl < als darstellbar durch toString/1
       boolean neg=false;
       if(value<0.0) neg=true;
-      if(Math.abs(value)<1.0E-3) { // bei sehr kleinen werten wird temporär
+      if(Math.abs(value)<1.0E-3) { // bei sehr kleinen werten wird temporaer
           value = neg?value-1:value+1;      // eine 1 addiert, damit toString/1
           low=true;};          // ordentlich arbeitet
       if(noFrac>=0 && noChar>noFrac && Math.abs(value)<1.0E7 ) {
@@ -199,13 +202,13 @@ public class LineIO {
 
   /**
    * Ausgabe einer Festkommazahl MIT Zeilenvorschub:
-   * schreibt die Kommazahl value rechtsbündig in insgesamt noChar viele
+   * <br>schreibt die Kommazahl value rechtsbuendig in insgesamt noChar viele
    * Spalten (Zeichen/Positionen) mit noFrac Nachkommastellen;
    * verbraucht mehr Spalten, falls die angegebene Zahl der Zeichen
    * nicht ausreicht, die Zahl zu fassen
-   * Zur Beschraenkung von write/3 siehe API toString/1 der Klasse Double
+   * <p>Zur Beschraenkung von write/3 siehe API toString/1 der Klasse Double
    * @param value  ganze Zahl, die ausgegeben wird
-   * @param noChar   Anzahl der Spalten, die für die Ausgabe benutzt werden
+   * @param noChar   Anzahl der Spalten, die fuer die Ausgabe benutzt werden
    * @param noFrac   Anzahl der Ziffern nach dem Komma
    */
   public void writeln(double value, int noChar, int noFrac){
@@ -216,7 +219,7 @@ public class LineIO {
 //-- Methoden der 2. Auflage entfernt
 
  /**
-  * Gibt die Aufforderung string aus und liest anschließend einen vom
+  * Gibt die Aufforderung string aus und liest anschliessend einen vom
   * Benutzer eingegebene Zeichenkette ein;
   * @param  string  Zeichenkette, die ausgegeben wird
   * @return eingegebene Zeichenkette
@@ -227,7 +230,7 @@ public class LineIO {
   }
 
  /**
-  * Gibt die Aufforderung string aus und liest anschließend einen vom
+  * Gibt die Aufforderung string aus und liest anschliessend einen vom
   * Benutzer eingegebene ganze Zahl (int) ein;
   * @param  string   Zeichenkette, die ausgegeben wird
   * @return eingegebene Zahl, Abbruch bei fehlerhafter Eingabe
@@ -238,9 +241,9 @@ public class LineIO {
   }
 
  /**
-  * Gibt die Aufforderung string aus und liest anschließend ein vom
-  * Benutzer eingegebenes Zeichen ein; Wird nur <Enter> ggedrückt, wird ein
-  * Leerzeichen zurück gegeben.
+  * Gibt die Aufforderung string aus und liest anschliessend ein vom
+  * Benutzer eingegebenes Zeichen ein; Wird nur [Enter] gedrueckt, wird ein
+  * Leerzeichen zurueck gegeben.
   * @param  string   Zeichenkette, die ausgegeben wird
   * @return eingegebenes Zeichen
   */
@@ -251,7 +254,7 @@ public class LineIO {
   }//readChar
 
  /**
-  * Gibt die Aufforderung string aus und liest anschließend ein vom
+  * Gibt die Aufforderung string aus und liest anschliessend ein vom
   * Benutzer eingegebene Zahl ein;
   * @param  string   Zeichenkette, die ausgegeben wird
   * @return eingegebene Zahl
@@ -262,7 +265,7 @@ public class LineIO {
   }//readDouble
 
  /**
-  * Gibt die Aufforderung string aus und liest anschließend ein vom
+  * Gibt die Aufforderung string aus und liest anschliessend ein vom
   * Benutzer eingegebene Zahl ein;
   * @param  string   Zeichenkette, die ausgegeben wird
   * @return eingegebene Zahl
