@@ -1,0 +1,69 @@
+\TitleFrame{Die Fakultätsfunktion}
+
+%\subsection{Iterative Umsetzung}
+\begin{frame}[shrink]{Fakultätsfunktion}{Iteratives Bildungsgesetz}
+    \begin{block}{Beispiel}
+        $5! = 5\times 4\times 3\times 2\times 1 = 120$
+    \end{block}
+    \begin{block}{Bedingung}
+        \centering{$n\in\mathbb{N}$}
+    \end{block}
+    \begin{block}{iteratives Bildungsgesetz}
+        \centering{$n! = 1\times 2\times\ldots\times n$}
+        \[n! = \prod_{k=1}^{n}k\]
+    \end{block}
+\end{frame}
+
+%\begin{frame}[shrink]{Fakultätsfunktion}{Iterativer Algorithmus}
+%\textbf{Typ} $zahl\in\mathbb{N}$\\
+%\textbf{Funktion} \textit{fakultaet(\textbf{Variable} $n: zahl$)}: $zahl$\\
+%\quad\textbf{Variable} $i$, $ergebnis$: $zahl$\\
+%\quad$i = 1$\\
+%\quad$ergebnis = 1$\\
+%\quad \textbf{solange} $i\leq n$:\\
+%\quad\quad$ergebnis = ergebnis * i$\\
+%\quad\quad$i = i + 1$\\
+%\quad\textbf{return} $ergebnis$
+%\end{frame}
+
+\begin{frame}{Fakultätsfunktion}{Iterative Implementierung in Java}
+    \Code{./code/factorial-iterative.java}{iterative Implementierung}{}
+\end{frame}
+
+
+%\subsection{Rekursive Umsetzung}
+\begin{frame}[shrink]{Fakultätsfunktion}{Rekursives Bildungsgesetz}
+    \begin{block}{Beispiel}
+        $4! = 4\times 3\times 2\times 1\times = 24$\\
+        $5\times 24 = 120\rightarrow 5! = 5\times 4!$\\
+    \end{block}
+    \begin{block}{Bedingung}
+        \centering{$n\in\mathbb{N}$}
+    \end{block}
+    \begin{block}{rekursives Bildungsgesetz:}
+        \[
+            n! = 
+                \begin{cases}
+                    1       &\quad\text{für }n = 0\\
+                    n(n-1)! &\quad\text{für }n > 0
+                \end{cases}
+        \]
+    \end{block}
+\end{frame}
+
+%\begin{frame}{Fakultätsfunktion}{Rekursiver Algorithmus}
+%    \ldots
+%\end{frame}
+
+
+\begin{frame}{Fakultätsfunktion}{Rekursive Implementierung in Java}
+    \Code{./code/factorial-recursive.java}{rekursive Implementierung}{}
+\end{frame}
+
+%\subsection{Beispiele}
+\begin{frame}{Fakultätsfunktion}{Variante 1}
+    \Code{./code/ex1/Factorial.java}{Factorial.java}{}
+\end{frame}
+\begin{frame}{Fakultätsfunktion}{Variante 1}
+    \Code{./code/ex1/Test.java}{Test.java}{}
+\end{frame}

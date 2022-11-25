@@ -1,0 +1,1 @@
+[<scope>] <Datentyp> [static] [final] <variablenName> [= <Initialwert>];
